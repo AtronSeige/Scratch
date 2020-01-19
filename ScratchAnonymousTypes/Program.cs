@@ -9,22 +9,22 @@ namespace ScratchAnonymousTypes
     {
 		static void Main(string[] args)
 		{
-			//var l = Car.GenerateList();
+			var l = Car.GenerateList();
 
-			////anon
-			//var anon = l.Select( x=> new { blp = x.Make, ewrt = x.Model });
-			//anon.ToList().ForEach(x => Console.WriteLine($"{x.blp} {x.ewrt}"));
+			//anon
+			var anon = l.Select(x => new { blp = x.Make, ewrt = x.Model });
+			anon.ToList().ForEach(x => Console.WriteLine($"{x.blp} {x.ewrt}"));
 
-			//var anon2 = l.Select(x => new { make = x.Make, ewrt = x.Model });
-			//anon2.ToList().ForEach(x => Console.WriteLine($"{x.make} {x.ewrt}"));
+			var anon2 = l.Select(x => new { make = x.Make, ewrt = x.Model });
+			anon2.ToList().ForEach(x => Console.WriteLine($"{x.make} {x.ewrt}"));
 
-			//var make = "MK";
-			//var model = "MDL";
+			var make = "MK";
+			var model = "MDL";
 			//dynamic d = new ExpandoObject();
 			//d[make] = "make here";
 			//d[model] = "model here";
 
-			//var exp = l.Select(x => new  { d[make] = x.Make });
+			//var exp = l.Select(x => new { d[make] = x.Make });
 
 			TestExpando();
 
