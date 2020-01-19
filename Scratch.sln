@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchString", "ScratchStr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchDate", "ScratchDate\ScratchDate.csproj", "{ADBF0A8D-F8DE-4C6B-A0C7-41D2C44510C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchAnonymousTypes", "ScratchAnonymousTypes\ScratchAnonymousTypes.csproj", "{43E3E567-8025-40C8-B6F7-1B7BA3C5F7FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchDecimal", "ScratchDecimal\ScratchDecimal.csproj", "{DC2E1512-2E60-44E8-90CB-0088D7A7C004}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchActiveDirectory", "ScratchActiveDirectory\ScratchActiveDirectory.csproj", "{E4922CEF-AC03-4706-90EC-4AEC9D505D94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,14 @@ Global
 		{ADBF0A8D-F8DE-4C6B-A0C7-41D2C44510C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADBF0A8D-F8DE-4C6B-A0C7-41D2C44510C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADBF0A8D-F8DE-4C6B-A0C7-41D2C44510C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC2E1512-2E60-44E8-90CB-0088D7A7C004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC2E1512-2E60-44E8-90CB-0088D7A7C004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC2E1512-2E60-44E8-90CB-0088D7A7C004}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC2E1512-2E60-44E8-90CB-0088D7A7C004}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4922CEF-AC03-4706-90EC-4AEC9D505D94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4922CEF-AC03-4706-90EC-4AEC9D505D94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4922CEF-AC03-4706-90EC-4AEC9D505D94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4922CEF-AC03-4706-90EC-4AEC9D505D94}.Release|Any CPU.Build.0 = Release|Any CPU
 		{43E3E567-8025-40C8-B6F7-1B7BA3C5F7FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{43E3E567-8025-40C8-B6F7-1B7BA3C5F7FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43E3E567-8025-40C8-B6F7-1B7BA3C5F7FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
