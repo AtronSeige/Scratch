@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchString", "ScratchStr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchDate", "ScratchDate\ScratchDate.csproj", "{ADBF0A8D-F8DE-4C6B-A0C7-41D2C44510C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchDecimal", "ScratchDecimal\ScratchDecimal.csproj", "{DC2E1512-2E60-44E8-90CB-0088D7A7C004}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{ADBF0A8D-F8DE-4C6B-A0C7-41D2C44510C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADBF0A8D-F8DE-4C6B-A0C7-41D2C44510C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADBF0A8D-F8DE-4C6B-A0C7-41D2C44510C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC2E1512-2E60-44E8-90CB-0088D7A7C004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC2E1512-2E60-44E8-90CB-0088D7A7C004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC2E1512-2E60-44E8-90CB-0088D7A7C004}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC2E1512-2E60-44E8-90CB-0088D7A7C004}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
