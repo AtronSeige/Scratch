@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchString", "ScratchString\ScratchString.csproj", "{DF6CA3D9-49AC-4189-AD63-D1D08694ADC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchString", "ScratchString\ScratchString.csproj", "{DF6CA3D9-49AC-4189-AD63-D1D08694ADC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchDate", "ScratchDate\ScratchDate.csproj", "{ADBF0A8D-F8DE-4C6B-A0C7-41D2C44510C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchDate", "ScratchDate\ScratchDate.csproj", "{ADBF0A8D-F8DE-4C6B-A0C7-41D2C44510C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchAnonymousTypes", "ScratchAnonymousTypes\ScratchAnonymousTypes.csproj", "{43E3E567-8025-40C8-B6F7-1B7BA3C5F7FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{ADBF0A8D-F8DE-4C6B-A0C7-41D2C44510C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADBF0A8D-F8DE-4C6B-A0C7-41D2C44510C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADBF0A8D-F8DE-4C6B-A0C7-41D2C44510C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43E3E567-8025-40C8-B6F7-1B7BA3C5F7FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43E3E567-8025-40C8-B6F7-1B7BA3C5F7FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43E3E567-8025-40C8-B6F7-1B7BA3C5F7FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43E3E567-8025-40C8-B6F7-1B7BA3C5F7FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
