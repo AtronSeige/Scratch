@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ScratchDate
+namespace ScratchDateTime
 {
     class Program
     {
@@ -18,6 +18,8 @@ namespace ScratchDate
             TestDate();
 
             TestDayOfWeeks();
+
+            TestTime();
 
             Console.WriteLine("DONE");
             Console.ReadLine();
@@ -51,6 +53,46 @@ namespace ScratchDate
             Console.WriteLine("Compare today < " + (dt.Date < today)); //FALSE
             Console.WriteLine("Compare today.date < " + (dt.Date < today.Date)); //FALSE
 
+        }
+
+        static void TestTime()
+		{
+            var operatingHoursStart = TimeSpan.Parse("07:00:00");
+            var operatingHoursEnd = TimeSpan.Parse("19:30:00");
+
+            Console.WriteLine(operatingHoursStart.ToString());
+
+            if (DateTime.Now.TimeOfDay < operatingHoursStart)
+            {
+                Console.WriteLine("Less");
+            }
+            else
+            {
+                Console.WriteLine("More");
+            }
+
+
+            Console.WriteLine(operatingHoursEnd.ToString());
+
+            if (DateTime.Now.TimeOfDay < operatingHoursEnd)
+            {
+                Console.WriteLine("Less");
+            }
+            else
+            {
+                Console.WriteLine("More");
+            }
+
+            FormatTime();
+        }
+
+        private static void FormatTime()
+        {
+            var now = DateTime.Now.TimeOfDay;
+
+            Console.WriteLine(now);
+            Console.WriteLine(now.ToString());
+            Console.WriteLine(now.ToString(@"hh\:mm\:ss"));
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -82,6 +83,8 @@ namespace ScratchString
 			TestAddNullToString();
 
 			TestGetValue();
+
+			TestStringAsMath("(2+5) * s");
 
 			Console.WriteLine("All done. Press any key...");
 
@@ -457,7 +460,21 @@ namespace ScratchString
 			if (teststring.GetValue("Test") != "") throw new Exception();
 		}
 
+		public static void TestStringAsMath(string mathString)
+		{
+			try
+			{
 
+				DataTable dt = new DataTable();
+				var result = dt.Compute(mathString, "");
+
+				Console.WriteLine("Result: " + result);
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.Message);
+			}
+		}
 
 	}
 }

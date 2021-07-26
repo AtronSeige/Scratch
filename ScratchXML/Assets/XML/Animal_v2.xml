@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Animal>
+	<Type>Leopard</Type>
+	<Name>Jimmy</Name>
+	<Age>3</Age>
+</Animal>
