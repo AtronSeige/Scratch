@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml;
 
 namespace ScratchDateTime
 {
@@ -9,17 +10,19 @@ namespace ScratchDateTime
             DateTime StartDate = new DateTime(1979, 01, 28);
             DateTime EndDate = DateTime.Now;
 
-            Console.WriteLine("Jaco was born on  " + StartDate.ToShortDateString());
-            Console.WriteLine("The date today is " + EndDate.ToShortDateString());
-            Console.WriteLine("Thus he has lived " + (EndDate - StartDate).Days + " days");
+            //Console.WriteLine("Jaco was born on  " + StartDate.ToShortDateString());
+            //Console.WriteLine("The date today is " + EndDate.ToShortDateString());
+            //Console.WriteLine("Thus he has lived " + (EndDate - StartDate).Days + " days");
 
-            Console.WriteLine("Thus he has lived " + Convert.ToInt32((EndDate - StartDate).TotalDays) + " days");
+            //Console.WriteLine("Thus he has lived " + Convert.ToInt32((EndDate - StartDate).TotalDays) + " days");
 
-            TestDate();
+            //TestDate();
 
-            TestDayOfWeeks();
+            //TestDayOfWeeks();
 
-            TestTime();
+            //TestTime();
+
+            ConvertToW3CFormat();
 
             Console.WriteLine("DONE");
             Console.ReadLine();
@@ -93,6 +96,18 @@ namespace ScratchDateTime
             Console.WriteLine(now);
             Console.WriteLine(now.ToString());
             Console.WriteLine(now.ToString(@"hh\:mm\:ss"));
+        }
+
+        private static void ConvertToW3CFormat()
+		{
+            DateTime dt = DateTime.Now;
+            
+            Console.WriteLine("Formated DateTime ToString         : " + dt.ToString("yyyy-MM-ddTHH:mm:ss.fffffffzzz"));
+            Console.WriteLine("XmlConvert ToString (UTC)          : " + XmlConvert.ToString(dt, XmlDateTimeSerializationMode.Utc));
+            Console.WriteLine("XmlConvert ToString (RoundtripKind): " + XmlConvert.ToString(dt, XmlDateTimeSerializationMode.RoundtripKind));
+            Console.WriteLine("XmlConvert ToString (Local)        : " + XmlConvert.ToString(dt, XmlDateTimeSerializationMode.Local));
+            Console.WriteLine("XmlConvert ToString (Unspecified)  : " + XmlConvert.ToString(dt, XmlDateTimeSerializationMode.Unspecified));
+
         }
     }
 }
