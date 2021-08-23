@@ -11,75 +11,77 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchDecimal", "ScratchDe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchActiveDirectory", "ScratchActiveDirectory\ScratchActiveDirectory.csproj", "{E4922CEF-AC03-4706-90EC-4AEC9D505D94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchAccessModifiers", "ScratchAccessModifiers\ScratchAccessModifiers.csproj", "{9A942B21-43A6-4BCC-8894-5CC21CC08FAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchAccessModifiers", "ScratchAccessModifiers\ScratchAccessModifiers.csproj", "{9A942B21-43A6-4BCC-8894-5CC21CC08FAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchAccessModifiers_Lib1", "ScratchAccessModifiers_Lib1\ScratchAccessModifiers_Lib1.csproj", "{34211D7D-6FA9-4191-A04A-68929F3ECD0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchAccessModifiers_Lib1", "ScratchAccessModifiers_Lib1\ScratchAccessModifiers_Lib1.csproj", "{34211D7D-6FA9-4191-A04A-68929F3ECD0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchAccessModifiers_Lib2", "ScratchAccessModifiers_Lib2\ScratchAccessModifiers_Lib2.csproj", "{E627B5EC-ACB2-41DA-BB12-A7E1B31AC326}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchAccessModifiers_Lib2", "ScratchAccessModifiers_Lib2\ScratchAccessModifiers_Lib2.csproj", "{E627B5EC-ACB2-41DA-BB12-A7E1B31AC326}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchAnonymousType", "ScratchAnonymousType\ScratchAnonymousType.csproj", "{3B5ED37E-D1BD-4FF8-928C-9DF4B63FA4CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchAnonymousType", "ScratchAnonymousType\ScratchAnonymousType.csproj", "{3B5ED37E-D1BD-4FF8-928C-9DF4B63FA4CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchBoolean", "ScratchBoolean\ScratchBoolean.csproj", "{0C3FB70F-E7BE-40E7-858F-07F2A2F8383F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchBoolean", "ScratchBoolean\ScratchBoolean.csproj", "{0C3FB70F-E7BE-40E7-858F-07F2A2F8383F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchClass", "ScratchClass\ScratchClass.csproj", "{C52B3242-B08C-4328-A2F8-A1821F4AAEAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchClass", "ScratchClass\ScratchClass.csproj", "{C52B3242-B08C-4328-A2F8-A1821F4AAEAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchClone", "ScratchClone\ScratchClone.csproj", "{F78F2B7C-27CB-4EB2-AE69-340243E2BC6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchClone", "ScratchClone\ScratchClone.csproj", "{F78F2B7C-27CB-4EB2-AE69-340243E2BC6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchCollection", "ScratchCollection\ScratchCollection.csproj", "{FE51715E-A604-4DEF-B5DE-302FCD3CCFB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchCollection", "ScratchCollection\ScratchCollection.csproj", "{FE51715E-A604-4DEF-B5DE-302FCD3CCFB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchConfiguration", "ScratchConfiguration\ScratchConfiguration.csproj", "{A5FAE552-CA1C-4A91-A7E9-861C578A0385}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchConfiguration", "ScratchConfiguration\ScratchConfiguration.csproj", "{A5FAE552-CA1C-4A91-A7E9-861C578A0385}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchThreading", "ScratchThreading\ScratchThreading.csproj", "{EEA38DFB-5E9B-4824-BDFB-7E085E8818D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchThreading", "ScratchThreading\ScratchThreading.csproj", "{EEA38DFB-5E9B-4824-BDFB-7E085E8818D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchDelegateEvent", "ScratchDelegateEvent\ScratchDelegateEvent.csproj", "{26BCD5B3-7AD7-4CBF-AB50-0C171A9D683E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchDelegateEvent", "ScratchDelegateEvent\ScratchDelegateEvent.csproj", "{26BCD5B3-7AD7-4CBF-AB50-0C171A9D683E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchDictionary", "ScratchDictionary\ScratchDictionary.csproj", "{EDDF6EBD-6AFB-4E15-AFE2-01790C0B3D66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchDictionary", "ScratchDictionary\ScratchDictionary.csproj", "{EDDF6EBD-6AFB-4E15-AFE2-01790C0B3D66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchEnDecryption", "ScratchEnDecryption\ScratchEnDecryption.csproj", "{A563C602-7F0B-4B38-85CE-218D9D3E5A3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchEnDecryption", "ScratchEnDecryption\ScratchEnDecryption.csproj", "{A563C602-7F0B-4B38-85CE-218D9D3E5A3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchEnum", "ScratchEnum\ScratchEnum.csproj", "{A8246D9F-F106-47AE-BACA-6264EF8C5C1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchEnum", "ScratchEnum\ScratchEnum.csproj", "{A8246D9F-F106-47AE-BACA-6264EF8C5C1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchEnvironment", "ScratchEnvironment\ScratchEnvironment.csproj", "{4C3A44D2-DAC7-466D-8EA4-D704C2D6DB6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchEnvironment", "ScratchEnvironment\ScratchEnvironment.csproj", "{4C3A44D2-DAC7-466D-8EA4-D704C2D6DB6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchEvent", "ScratchEvent\ScratchEvent.csproj", "{27AA5906-8DFA-440B-97D5-D9C8A2CD0587}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchEvent", "ScratchEvent\ScratchEvent.csproj", "{27AA5906-8DFA-440B-97D5-D9C8A2CD0587}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchException", "ScratchException\ScratchException.csproj", "{294954B4-7C42-48E5-A2F0-6B7598CE17A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchException", "ScratchException\ScratchException.csproj", "{294954B4-7C42-48E5-A2F0-6B7598CE17A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchExecutingStringCommands", "ScratchExecutingStringCommands\ScratchExecutingStringCommands.csproj", "{831AA169-13D7-40EB-A9AC-8A036E28378E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchExecutingStringCommands", "ScratchExecutingStringCommands\ScratchExecutingStringCommands.csproj", "{831AA169-13D7-40EB-A9AC-8A036E28378E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchGenerics", "ScratchGenerics\ScratchGenerics.csproj", "{B637B563-2BC1-4EA3-8D95-6B4CCA122F65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchGenerics", "ScratchGenerics\ScratchGenerics.csproj", "{B637B563-2BC1-4EA3-8D95-6B4CCA122F65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchInteger", "ScratchInteger\ScratchInteger.csproj", "{4C6D8834-13B8-4731-89FD-7C4E8CC723AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchInteger", "ScratchInteger\ScratchInteger.csproj", "{4C6D8834-13B8-4731-89FD-7C4E8CC723AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchLinq", "ScratchLinq\ScratchLinq.csproj", "{1974F41E-8158-4D27-BD3D-C4EE7372055B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchLinq", "ScratchLinq\ScratchLinq.csproj", "{1974F41E-8158-4D27-BD3D-C4EE7372055B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchNamedPipeSeverEntities", "ScratchNamedPipeSeverEntities\ScratchNamedPipeSeverEntities.csproj", "{AF41A633-0806-4037-8417-64816C40FA10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchNamedPipeSeverEntities", "ScratchNamedPipeSeverEntities\ScratchNamedPipeSeverEntities.csproj", "{AF41A633-0806-4037-8417-64816C40FA10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchNamedPipeSeverReceiver", "ScratchNamedPipeSeverReceiver\ScratchNamedPipeSeverReceiver.csproj", "{65E0F032-E46C-4620-87FD-966B90340495}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchNamedPipeSeverReceiver", "ScratchNamedPipeSeverReceiver\ScratchNamedPipeSeverReceiver.csproj", "{65E0F032-E46C-4620-87FD-966B90340495}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchNamedPipeSeverSender", "ScratchNamedPipeSeverSender\ScratchNamedPipeSeverSender.csproj", "{946AC1C8-1AF1-4F34-B926-3F59B6B16A02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchNamedPipeSeverSender", "ScratchNamedPipeSeverSender\ScratchNamedPipeSeverSender.csproj", "{946AC1C8-1AF1-4F34-B926-3F59B6B16A02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchNull", "ScratchNull\ScratchNull.csproj", "{0D45F259-2F4E-4BC6-B0C6-13E73AF099B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchNull", "ScratchNull\ScratchNull.csproj", "{0D45F259-2F4E-4BC6-B0C6-13E73AF099B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchObject", "ScratchObject\ScratchObject.csproj", "{08438A2C-F806-4ED4-9C85-6F34BCB36B6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchObject", "ScratchObject\ScratchObject.csproj", "{08438A2C-F806-4ED4-9C85-6F34BCB36B6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchPing", "ScratchPing\ScratchPing.csproj", "{BF44D287-1323-4F33-A39C-6ADE0CD6D776}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchPing", "ScratchPing\ScratchPing.csproj", "{BF44D287-1323-4F33-A39C-6ADE0CD6D776}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchRandom", "ScratchRandom\ScratchRandom.csproj", "{5308D102-37C1-4F0C-9744-742A723180D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchRandom", "ScratchRandom\ScratchRandom.csproj", "{5308D102-37C1-4F0C-9744-742A723180D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchRecursiveCall", "ScratchRecursiveCall\ScratchRecursiveCall.csproj", "{9F221845-B26D-4978-80F7-184F9DF5F9C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchRecursiveCall", "ScratchRecursiveCall\ScratchRecursiveCall.csproj", "{9F221845-B26D-4978-80F7-184F9DF5F9C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchRegex", "ScratchRegex\ScratchRegex.csproj", "{F3196CC9-7B53-47EB-84A8-3FA460C55928}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchRegex", "ScratchRegex\ScratchRegex.csproj", "{F3196CC9-7B53-47EB-84A8-3FA460C55928}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchStatic", "ScratchStatic\ScratchStatic.csproj", "{D2EA3F30-2327-4641-BE1E-CBC89D1912C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchStatic", "ScratchStatic\ScratchStatic.csproj", "{D2EA3F30-2327-4641-BE1E-CBC89D1912C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchType", "ScratchType\ScratchType.csproj", "{1B92A81F-44EF-4DCE-8F15-6B3975DDE68B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchType", "ScratchType\ScratchType.csproj", "{1B92A81F-44EF-4DCE-8F15-6B3975DDE68B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchWriteTextFile", "ScratchWriteTextFile\ScratchWriteTextFile.csproj", "{A3777E16-D9D1-45AC-B346-DFE769D1A0A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchWriteTextFile", "ScratchWriteTextFile\ScratchWriteTextFile.csproj", "{A3777E16-D9D1-45AC-B346-DFE769D1A0A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchXML", "ScratchXML\ScratchXML.csproj", "{C3C7E1BD-78BD-4785-B90B-BF9C1F98E7A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchXML", "ScratchXML\ScratchXML.csproj", "{C3C7E1BD-78BD-4785-B90B-BF9C1F98E7A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchYield", "ScratchYield\ScratchYield.csproj", "{9F883125-118D-4A20-B1A3-013AA084D7DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchYield", "ScratchYield\ScratchYield.csproj", "{9F883125-118D-4A20-B1A3-013AA084D7DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchHelpers", "ScratchHelpers\ScratchHelpers.csproj", "{1B14AE07-BA71-42C7-932F-72BFBFE6A2C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -243,6 +245,10 @@ Global
 		{9F883125-118D-4A20-B1A3-013AA084D7DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F883125-118D-4A20-B1A3-013AA084D7DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F883125-118D-4A20-B1A3-013AA084D7DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B14AE07-BA71-42C7-932F-72BFBFE6A2C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B14AE07-BA71-42C7-932F-72BFBFE6A2C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B14AE07-BA71-42C7-932F-72BFBFE6A2C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B14AE07-BA71-42C7-932F-72BFBFE6A2C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
