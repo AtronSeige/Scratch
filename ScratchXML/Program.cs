@@ -18,28 +18,30 @@ namespace ScratchXML
 		{
 			try
 			{
-				string xml = "<Claim><ClaimNo>123</ClaimNo><Reserves><Reserve><Value>100</Value></Reserve><Reserve><Value>200</Value></Reserve></Reserves></Claim>";
-
-				Claim c = xml.DeserializeXml<Claim>();
-
-				if (c != null)
-				{
-					Console.WriteLine(c.ClaimNo);
-				}
-
-				var rs = xml.DeserializeXml<List<Reserve>>("Reserves");
-
-				if (rs != null)
-				{
-					foreach (var r in rs)
-					{
-						Console.WriteLine(r.Value);
-					}
-				}
+				TestLoadXML();
 			}
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex.Message);
+				Console.ReadLine();
+			}
+		}
+
+		static void TestClaimReserve() {
+			string xml = "<Claim><ClaimNo>123</ClaimNo><Reserves><Reserve><Value>100</Value></Reserve><Reserve><Value>200</Value></Reserve></Reserves></Claim>";
+
+			Claim c = xml.DeserializeXml<Claim>();
+
+			if (c != null) {
+				Console.WriteLine(c.ClaimNo);
+			}
+
+			var rs = xml.DeserializeXml<List<Reserve>>("Reserves");
+
+			if (rs != null) {
+				foreach (var r in rs) {
+					Console.WriteLine(r.Value);
+				}
 			}
 		}
 
@@ -175,6 +177,60 @@ namespace ScratchXML
 					throw new Exception(e.Message);
 
 			}
+		}
+
+		private static void TestLoadXML() {
+
+			XmlDocument x = new XmlDocument();
+			string xml = null;
+
+			try {
+				x.LoadXml(xml);
+				Console.WriteLine($"LoadXml Results [{xml}] > [{x.OuterXml}]");
+			} catch (Exception ex) {
+				Console.WriteLine($"LoadXml Exception {ex.Message} with [{xml}]");
+			}
+
+			try {
+				xml = string.Empty;
+				x.LoadXml(xml);
+				Console.WriteLine($"LoadXml Results [{xml}] > [{x.OuterXml}]");
+			} catch (Exception ex) {
+				Console.WriteLine($"LoadXml Exception {ex.Message} with [{xml}]");
+			}
+
+			try {
+				xml = "not valid xml";
+				x.LoadXml(xml);
+				Console.WriteLine($"LoadXml Results [{xml}] > [{x.OuterXml}]");
+			} catch (Exception ex) {
+				Console.WriteLine($"LoadXml Exception {ex.Message} with [{xml}]");
+			}
+
+			try {
+				xml = "<partial><xml/>";
+				x.LoadXml(xml);
+				Console.WriteLine($"LoadXml Results [{xml}] > [{x.OuterXml}]");
+			} catch (Exception ex) {
+				Console.WriteLine($"LoadXml Exception {ex.Message} with [{xml}]");
+			}
+
+			try {
+				xml = "<valid><xml>is</xml></valid>";
+				x.LoadXml(xml);
+				Console.WriteLine($"LoadXml Results [{xml}] > [{x.OuterXml}]");
+			} catch (Exception ex) {
+				Console.WriteLine($"LoadXml Exception {ex.Message} with [{xml}]");
+			}
+
+			//try {
+			//	xml = "";
+			//	x.LoadXml(xml);
+			//	Console.WriteLine($"LoadXml Results [{xml}] > [{x.OuterXml}]");
+			//} catch (Exception ex) {
+			//	Console.WriteLine($"LoadXml Exception {ex.Message} with [{xml}]");
+			//}
+
 		}
 	}
 }
