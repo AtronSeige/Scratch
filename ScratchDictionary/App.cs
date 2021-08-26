@@ -10,6 +10,28 @@ namespace ScratchDictionary {
 		}
 
 		public void Run() {
+			
+
+			//Reorder();
+
+			//TestKey();
+			//TestCaseInsensitive();
+			//TestToString();
+
+			TestMissingKey();
+		}
+
+		private void TestMissingKey() {
+			Dictionary<int, string> d = new Dictionary<int, string>();
+
+			d.Add(1, "one");
+			d.Add(2, "two");
+
+			Console.WriteLine("Missing value is " + d[3]);
+		}
+
+		private static void Reorder() {
+
 			Dictionary<Numbers, string> dOrdered = new Dictionary<Numbers, string>();
 			dOrdered.Add(Numbers.One, "1");
 			dOrdered.Add(Numbers.Two, "2");
@@ -23,15 +45,6 @@ namespace ScratchDictionary {
 			dUnOrdered.Add(Numbers.One, "1");
 			dUnOrdered.Add(Numbers.Three, "3");
 			dUnOrdered.Add(Numbers.Two, "2");
-
-			Reorder(dOrdered, dUnOrdered);
-
-			//TestKey();
-			//TestCaseInsensitive();
-			TestToString();
-		}
-
-		private static void Reorder(Dictionary<Numbers, string> dOrdered, Dictionary<Numbers, string> dUnOrdered) {
 
 			// Use OrderBy method. This will sort the items in the order they are created as enums
 			foreach (var item in dUnOrdered.OrderBy(i => i.Key)) {
