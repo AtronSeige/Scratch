@@ -1,11 +1,10 @@
 ﻿using ScratchHelpers;
 using System;
-using System.Collections;
-using System.Text;
 
-namespace ScratchException {
+namespace ScratchTemplate {
 	class Program {
-		private static void Main(string[] args) {
+
+		static void Main(string[] args) {
 
 			try {
 				App a = new App();
@@ -17,8 +16,5 @@ namespace ScratchException {
 			Console.WriteLine("All done. Press any key...");
 			Console.ReadLine();
 		}
-
-
-		
 	}
 }

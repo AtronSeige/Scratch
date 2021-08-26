@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ScratchNull {
 	class App {
@@ -16,6 +17,8 @@ namespace ScratchNull {
 			ShorthandTest();
 
 			NullConditional();
+
+			NullCoalescing();
 
 		}
 
@@ -170,7 +173,7 @@ namespace ScratchNull {
 				Console.WriteLine("null t, null name. false");
 			}
 
-			if (t?.Ages?.Count() > 0) {
+			if (t?.Ages?.Count > 0) {
 				Console.WriteLine("null t, null ages. Any");
 			} else {
 				Console.WriteLine("null t, null ages. false");
@@ -178,7 +181,7 @@ namespace ScratchNull {
 
 			t = new test();
 
-			if (t?.Ages?.Count() > 0) {
+			if (t?.Ages?.Count > 0) {
 				Console.WriteLine("t instance, null ages. Any");
 			} else {
 				Console.WriteLine("t instance, null ages. false");
@@ -186,7 +189,7 @@ namespace ScratchNull {
 
 			t.Ages = new List<int>();
 
-			if (t?.Ages?.Count() > 0) {
+			if (t?.Ages?.Count > 0) {
 				Console.WriteLine("t instance, ages instance. Any");
 			} else {
 				Console.WriteLine("t instance, null instance. false");
@@ -194,7 +197,7 @@ namespace ScratchNull {
 
 			t.Ages.Add(1);
 
-			if (t?.Ages?.Count() > 0) {
+			if (t?.Ages?.Count > 0) {
 				Console.WriteLine("t instance, ages instance, 1 item. Any");
 			} else {
 				Console.WriteLine("t instance, null instance, 1 item. false");

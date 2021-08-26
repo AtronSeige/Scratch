@@ -81,7 +81,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchXML", "ScratchXML\Sc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchYield", "ScratchYield\ScratchYield.csproj", "{9F883125-118D-4A20-B1A3-013AA084D7DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchHelpers", "ScratchHelpers\ScratchHelpers.csproj", "{1B14AE07-BA71-42C7-932F-72BFBFE6A2C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchHelpers", "ScratchHelpers\ScratchHelpers.csproj", "{1B14AE07-BA71-42C7-932F-72BFBFE6A2C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchTemplate", "ScratchTemplate\ScratchTemplate.csproj", "{7A723E28-62C3-43DF-95DF-C4F4BD004493}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -249,6 +251,10 @@ Global
 		{1B14AE07-BA71-42C7-932F-72BFBFE6A2C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B14AE07-BA71-42C7-932F-72BFBFE6A2C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B14AE07-BA71-42C7-932F-72BFBFE6A2C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A723E28-62C3-43DF-95DF-C4F4BD004493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A723E28-62C3-43DF-95DF-C4F4BD004493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A723E28-62C3-43DF-95DF-C4F4BD004493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A723E28-62C3-43DF-95DF-C4F4BD004493}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
