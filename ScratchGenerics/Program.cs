@@ -19,6 +19,7 @@ namespace ScratchGenerics
             bool bfN = To<bool>(sbfN);
 
             bool bd = Default<bool>();
+            testme tm = Default<testme>();
 
             //int16
             string si16_null = null;
@@ -35,8 +36,8 @@ namespace ScratchGenerics
         public static T Default<T>()
         {
             T x = default(T);
-
-            Console.WriteLine(x);
+            //Jaco: make it write out null
+            Console.WriteLine($"default<T> is {x}");
 
             return x;
 
@@ -104,5 +105,10 @@ namespace ScratchGenerics
             else
                 return (T)Convert.ChangeType(text, type);
         }
+
+        public class testme {
+            public int ID { get; set; }
+			public string Name { get; set; }
+		}
     }
 }
