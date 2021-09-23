@@ -13,63 +13,65 @@ namespace ScratchString {
 		}
 
 		public void Run() {
-			string str = "";
-			Join(str);
-			Join2(str);
+			//string str = "";
+			//Join(str);
+			//Join2(str);
 
-			List<char> chars = new List<char> { 'H', 'E', 'L', 'L', 'O', ' ', 'W', 'O', 'R', 'L', 'D' };
-			JoinListChar(chars);
-			JoinListChar2(chars);
+			//List<char> chars = new List<char> { 'H', 'E', 'L', 'L', 'O', ' ', 'W', 'O', 'R', 'L', 'D' };
+			//JoinListChar(chars);
+			//JoinListChar2(chars);
 
-			Console.WriteLine($"CapitalizeStart : {CapitalizeStart("thIs is a test", true)}");
-			Console.WriteLine($"CapitalizeStart : {CapitalizeStart("1", true)}");
-			Console.WriteLine($"CapitalizeStart : {CapitalizeStart(null)}");
-			Console.WriteLine($"CapitalizeStart : {CapitalizeStart("")}");
-			Console.WriteLine($"CapitalizeEachWord : {CapitalizeEachWord("thIs is a test", true)}");
-			Console.WriteLine($"CapitalizeEachWord : {CapitalizeEachWord("g", true)}");
-			Console.WriteLine($"CapitalizeEachWord : {CapitalizeEachWord(null)}");
-			Console.WriteLine($"CapitalizeEachWord : {CapitalizeEachWord("")}");
+			//Console.WriteLine($"CapitalizeStart : {CapitalizeStart("thIs is a test", true)}");
+			//Console.WriteLine($"CapitalizeStart : {CapitalizeStart("1", true)}");
+			//Console.WriteLine($"CapitalizeStart : {CapitalizeStart(null)}");
+			//Console.WriteLine($"CapitalizeStart : {CapitalizeStart("")}");
+			//Console.WriteLine($"CapitalizeEachWord : {CapitalizeEachWord("thIs is a test", true)}");
+			//Console.WriteLine($"CapitalizeEachWord : {CapitalizeEachWord("g", true)}");
+			//Console.WriteLine($"CapitalizeEachWord : {CapitalizeEachWord(null)}");
+			//Console.WriteLine($"CapitalizeEachWord : {CapitalizeEachWord("")}");
 
-			CompareStrings("test", "test");
-			CompareStrings("TEST", "test");
-
-
-
-			Console.WriteLine(CamelCase("THIS IS A TEST"));
-			TestLocations();
-
-			DifferentDecimalTString();
-			Console.WriteLine(); Console.WriteLine(); Console.WriteLine();
+			//CompareStrings("test", "test");
+			//CompareStrings("TEST", "test");
 
 
-			DifferentDateTimeToString();
-			NullTest();
 
-			TestEquality();
+			//Console.WriteLine(CamelCase("THIS IS A TEST"));
+			//TestLocations();
 
-			TestSplit();
-			TestDictionary();
-			TestContains();
+			//DifferentDecimalTString();
+			//Console.WriteLine(); Console.WriteLine(); Console.WriteLine();
 
-			BoolToString();
 
-			TestReplace();
+			//DifferentDateTimeToString();
+			//NullTest();
 
-			TestSubstringAndIndexOf();
+			//TestEquality();
 
-			TestNulls();
+			//TestSplit();
+			//TestDictionary();
+			//TestContains();
 
-			TestPadding();
+			//BoolToString();
 
-			TestAddNullToString();
+			//TestReplace();
 
-			TestGetValue();
+			//TestSubstringAndIndexOf();
 
-			TestStringAsMath("(2+5) * s");
+			//TestNulls();
 
-			//NullCastTest();
-			//NonASCII7Char();
-			SubstringLen();
+			//TestPadding();
+
+			//TestAddNullToString();
+
+			//TestGetValue();
+
+			//TestStringAsMath("(2+5) * s");
+
+			////NullCastTest();
+			////NonASCII7Char();
+			//SubstringLen();
+
+			NameSurnameTest();
 		}
 
 		private void NullCastTest() {
@@ -455,5 +457,57 @@ namespace ScratchString {
 			}
 		}
 
+		public void NameSurnameTest() {
+			string value = "";
+			(string first, string last) result = SplitNameSurnameBySpace(value);
+			Console.WriteLine($"First [{result.first}] Last [{result.last}]");
+
+			value = "Jaco";
+			result = SplitNameSurnameBySpace(value);
+			Console.WriteLine($"First [{result.first}] Last [{result.last}]");
+
+			value = "Jaco Test";
+			result = SplitNameSurnameBySpace(value);
+			Console.WriteLine($"First [{result.first}] Last [{result.last}]");
+
+			value = "Jaco Test Test2";
+			result = SplitNameSurnameBySpace(value);
+			Console.WriteLine($"First [{result.first}] Last [{result.last}]");
+
+			value = null;
+			result = SplitNameSurnameBySpace(value);
+			Console.WriteLine($"First [{result.first}] Last [{result.last}]");
+
+			//value = "";
+			//result = SplitNameSurnameBySpace(value);
+			//Console.WriteLine($"First [{result.first}] Last [{result.last}]");
+
+			//value = "";
+			//result = SplitNameSurnameBySpace(value);
+			//Console.WriteLine($"First [{result.first}] Last [{result.last}]");
+
+			//value = "";
+			//result = SplitNameSurnameBySpace(value);
+			//Console.WriteLine($"First [{result.first}] Last [{result.last}]");
+
+			//value = "";
+			//result = SplitNameSurnameBySpace(value);
+			//Console.WriteLine($"First [{result.first}] Last [{result.last}]");
+		}
+
+		private (string first, string last) SplitNameSurnameBySpace(string fullname) {
+
+			if (string.IsNullOrWhiteSpace(fullname)) return ("","");
+
+			if (fullname.Contains(" ")) {
+				int space = fullname.LastIndexOf(" ");
+				string lastname = fullname.Substring(space+ 1);
+				string firstname = fullname.Substring(0, space);
+				
+				return (firstname, lastname);
+			} else {
+				return (fullname, "");
+			}
+		}
 	}
 }
