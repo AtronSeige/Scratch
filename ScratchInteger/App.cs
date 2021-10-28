@@ -9,15 +9,44 @@ namespace ScratchInteger {
 		}
 
 		public void Run() {
-			this.NullableInt();
-			this.StringToInt();
-			//Compare();
-			GetNext5(1);
-			GetNext5(12);
-			GetNext5(14);
-			GetNext5(15);
-			GetNext5(18);
-			GetNext5(100);
+			//this.NullableInt();
+			//this.StringToInt();
+			////Compare();
+			//GetNext5(1);
+			//GetNext5(12);
+			//GetNext5(14);
+			//GetNext5(15);
+			//GetNext5(18);
+			//GetNext5(100);
+
+			TestTryParse();
+		}
+
+		private void TestTryParse() {
+
+			int i = 0;
+			string value = "zero";
+			if (!int.TryParse(value, out i)) {
+				Console.WriteLine($"Parse failed for {value}");
+			}
+
+			i = 0;
+			value = "0";
+			if (!int.TryParse(value, out i)) {
+				Console.WriteLine($"Parse failed for {value}");
+			} else {
+				Console.WriteLine($"Parsing {value} returned {i}");
+			}
+
+			// Immediately check the value after the parse
+			i = 0;
+			value = "-1";
+			if (!int.TryParse(value, out i) || i <= 0) {
+				Console.WriteLine($"Parse failed for {value} or returned less that 0 ({i})");
+			} else {
+				Console.WriteLine($"Parsing {value} returned {i}");
+			}
+
 		}
 
 		private void NullableInt() {
