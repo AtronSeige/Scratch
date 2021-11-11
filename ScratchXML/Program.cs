@@ -18,7 +18,8 @@ namespace ScratchXML
 		{
 			try
 			{
-				TestLoadXML();
+				//TestLoadXML();
+				TestClaimReserve();
 			}
 			catch (Exception ex)
 			{
@@ -28,12 +29,34 @@ namespace ScratchXML
 		}
 
 		static void TestClaimReserve() {
+
+			// Single Claim
 			string xml = "<Claim><ClaimNo>123</ClaimNo><Reserves><Reserve><Value>100</Value></Reserve><Reserve><Value>200</Value></Reserve></Reserves></Claim>";
 
 			Claim c = xml.DeserializeXml<Claim>();
 
 			if (c != null) {
 				Console.WriteLine(c.ClaimNo);
+			}
+
+			// List of 2 Claims in ClaimWrapper
+			xml = "<Claims><Claim><ClaimNo>123</ClaimNo><Reserves><Reserve><Value>100</Value></Reserve><Reserve><Value>200</Value></Reserve></Reserves></Claim><Claim><ClaimNo>123</ClaimNo><Reserves><Reserve><Value>100</Value></Reserve><Reserve><Value>200</Value></Reserve></Reserves></Claim></Claims>";
+
+			ClaimWrapper claims = xml.DeserializeXml<ClaimWrapper>();
+
+			if (claims != null) {
+				Console.WriteLine("List of claims");
+				claims.Claims.ForEach(x => Console.WriteLine(x.ClaimNo));
+			}
+
+			// List of 3 Claims in ClaimWrapper, different deserializer
+			xml = "<Claims><Claim><ClaimNo>123</ClaimNo><Reserves><Reserve><Value>100</Value></Reserve><Reserve><Value>200</Value></Reserve></Reserves></Claim><Claim><ClaimNo>123</ClaimNo><Reserves><Reserve><Value>100</Value></Reserve><Reserve><Value>200</Value></Reserve></Reserves></Claim></Claims>";
+
+			claims = xml.DeserializeXml2<ClaimWrapper>();
+
+			if (claims != null) {
+				Console.WriteLine("List of claims");
+				claims.Claims.ForEach(x => Console.WriteLine(x.ClaimNo));
 			}
 
 			var rs = xml.DeserializeXml<List<Reserve>>("Reserves");
