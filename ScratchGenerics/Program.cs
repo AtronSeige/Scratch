@@ -18,8 +18,12 @@ namespace ScratchGenerics
             bool bfF = To<bool>(sbfF);
             bool bfN = To<bool>(sbfN);
 
-            bool bd = Default<bool>();
-            testme tm = Default<testme>();
+            bool bd = CreateDefaultOrNull<bool>();
+            testme tm = CreateDefaultOrNull<testme>();
+
+            testme tmNew = CreateNew<testme>();
+            tmNew.ID = 1;
+            tmNew.Name = "Jaco";
 
             //int16
             string si16_null = null;
@@ -33,15 +37,32 @@ namespace ScratchGenerics
             Console.ReadLine();
         }
 
-        public static T Default<T>()
+        /// <summary>
+        /// Create an object in the default state of the class/struct.
+        /// For instance, bool will default false
+        /// POCO will default to NULL
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static T CreateDefaultOrNull<T>()
         {
             T x = default(T);
             //Jaco: make it write out null
             Console.WriteLine($"default<T> is {x}");
 
             return x;
-
         }
+
+        public static T CreateNew<T>() {
+            // Create an instance of the type that was passed in
+            T x = (T)Activator.CreateInstance(typeof(T));
+
+			Console.WriteLine(x.GetType().ToString());
+
+            return x;
+        }
+
+
 
         public static T To2<T>(string text)
         {
