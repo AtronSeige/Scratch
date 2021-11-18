@@ -19,7 +19,8 @@ namespace ScratchXML
 			try
 			{
 				//TestLoadXML();
-				TestClaimReserve();
+				//TestClaimReserve();
+				TestXmlDocument();
 			}
 			catch (Exception ex)
 			{
@@ -65,6 +66,18 @@ namespace ScratchXML
 				foreach (var r in rs) {
 					Console.WriteLine(r.Value);
 				}
+			}
+		}
+
+		static void TestXmlDocument() {
+			// Single Claim
+			XmlDocument xml = new XmlDocument();
+			xml.LoadXml("<Claim><ClaimNo>123</ClaimNo><Reserves><Reserve><Value>100</Value></Reserve><Reserve><Value>200</Value></Reserve></Reserves></Claim>");
+
+			Claim c = xml.DeserializeXml<Claim>();
+
+			if (c != null) {
+				Console.WriteLine(c.ClaimNo);
 			}
 		}
 

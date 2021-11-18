@@ -46,5 +46,21 @@ namespace ScratchXML
 				}
 			}
 		}
+
+		public static T DeserializeXml<T>(this XmlDocument self, string innerStartTag = null) {
+			// This is for security and should not be changed unless you *really* need to, and know what you are doing.
+			XmlReaderSettings xmlReaderSettings = new XmlReaderSettings {
+				DtdProcessing = DtdProcessing.Prohibit,
+				XmlResolver = null
+			};
+
+			XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
+
+			// Create an XmlReader that uses XmlNodeReader and applies the XmlReaderSettings for security.
+			using (XmlReader xmlReader = XmlReader.Create(new XmlNodeReader(self), xmlReaderSettings)) {
+				return (T)xmlSerializer.Deserialize(xmlReader);
+			}
+			
+		}
 	}
 }

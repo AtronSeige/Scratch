@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29709.97
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchString", "ScratchString\ScratchString.csproj", "{DF6CA3D9-49AC-4189-AD63-D1D08694ADC5}"
 EndProject
@@ -83,7 +83,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchYield", "ScratchYiel
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchHelpers", "ScratchHelpers\ScratchHelpers.csproj", "{1B14AE07-BA71-42C7-932F-72BFBFE6A2C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchTemplate", "ScratchTemplate\ScratchTemplate.csproj", "{7A723E28-62C3-43DF-95DF-C4F4BD004493}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchTemplate", "ScratchTemplate\ScratchTemplate.csproj", "{7A723E28-62C3-43DF-95DF-C4F4BD004493}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchHttpClient_Net5", "ScratchHttpClient_Net5\ScratchHttpClient_Net5.csproj", "{ABCEA4C7-3968-46DC-93DC-B1ABECB18E71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -255,6 +257,10 @@ Global
 		{7A723E28-62C3-43DF-95DF-C4F4BD004493}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A723E28-62C3-43DF-95DF-C4F4BD004493}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A723E28-62C3-43DF-95DF-C4F4BD004493}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABCEA4C7-3968-46DC-93DC-B1ABECB18E71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABCEA4C7-3968-46DC-93DC-B1ABECB18E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABCEA4C7-3968-46DC-93DC-B1ABECB18E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABCEA4C7-3968-46DC-93DC-B1ABECB18E71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
