@@ -28,16 +28,26 @@ namespace ScratchDateTime {
 
 			//TestTime();
 
-			ConvertToW3CFormat();
+			//ConvertToW3CFormat();
 
 			//TestUTCStringTodate();
 			//TestXMLDate();
-			TestUnivarsalDate();
+			//TestUnivarsalDate();
 
 			//Test_TryParseExact("dd-MM-yyyy", "02-05-2020");
 			//Test_TryParseExact("dd-MM-yyyy", "02/05/2020");
 			//Test_TryParseExact("dd-MM-yyyy", "2020-05-02");
 			//Test_TryParseExact("dd-MM-yyyy", "10-15-2020");
+
+			TestDifferenceInSeconds();
+		}
+
+		private void TestDifferenceInSeconds() {
+			DateTime start = DateTime.Now.AddSeconds(-10);
+			
+			double diffInSeconds = (start - DateTime.Now).TotalSeconds;
+
+			Console.WriteLine($"Date diff in seconds {diffInSeconds}");
 		}
 
 		private static void TestDayOfWeeks() {

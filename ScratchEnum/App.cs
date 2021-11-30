@@ -20,6 +20,8 @@ namespace ScratchEnum {
 			//This does nto work because the case is invalid
 			//Sex s3 = (Sex)Enum.Parse(typeof(Sex), "m");
 
+			int iF = ((int)sF);
+
 
 			//Convert one enum to another 
 			//This only works if the INT value exists in the other.

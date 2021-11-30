@@ -20,7 +20,9 @@ namespace ScratchXML
 			{
 				//TestLoadXML();
 				//TestClaimReserve();
-				TestXmlDocument();
+				//TestXmlDocument();
+
+				TestDeserializeCreateSalesOrder();
 			}
 			catch (Exception ex)
 			{
@@ -29,12 +31,75 @@ namespace ScratchXML
 			}
 		}
 
+		private static void TestDeserializeCreateSalesOrder() {
+			string xml = @"<ProntoOrder>
+  <OrderID>11858</OrderID>
+  <AccountCode>0033014</AccountCode>
+  <BranchCode></BranchCode>
+  <SalePriority>5</SalePriority>
+  <EmployeeCode>1</EmployeeCode>
+  <TerritoryCode>310</TerritoryCode>
+  <Date>26-11-2021</Date>
+  <Addresses>
+    <ProntoAddress>
+      <AddressType>DA</AddressType>
+      <Company />
+      <Street>534 Columbo Street</Street>
+      <Suburb>blooper</Suburb>
+      <State>South Island</State>
+      <Country>NZL</Country>
+      <City>Christchurch</City>
+      <Postcode>8011</Postcode>
+      <ContactPhone>123456789</ContactPhone>
+    </ProntoAddress>
+  </Addresses>
+  <Lines>
+    <ProntoLine>
+      <LineType>SN</LineType>
+      <OrderItemID>2912</OrderItemID>
+      <ForeignIdentity>163879BLA2</ForeignIdentity>
+      <UnitPrice>754.5500</UnitPrice>
+      <TaxCode>Z</TaxCode>
+      <Quantity>1</Quantity>
+    </ProntoLine>
+    <ProntoLine>
+      <LineType>SC</LineType>
+      <UnitPrice>50.0000</UnitPrice>
+      <TaxCode>Z</TaxCode>
+      <ChargeTypeFlag>0</ChargeTypeFlag>
+      <LineDescription>NZ Express</LineDescription>
+    </ProntoLine>
+  </Lines>
+  <Payments>
+    <ProntoPayment>
+      <Amount>804.5500</Amount>
+      <StoreID>310</StoreID>
+      <TerminalNumber>1</TerminalNumber>
+      <PaymentMethod>V</PaymentMethod>
+    </ProntoPayment>
+  </Payments>
+</ProntoOrder>";
+
+			CreateSalesOrder_Request cso = xml.DeserializeXml<CreateSalesOrder_Request>();
+
+			Console.WriteLine(cso.OrderID);
+			Console.WriteLine("Addresses " + cso.Addresses.Count);
+			Console.WriteLine("Addresses 0 Street " + cso.Addresses[0].Street);
+			Console.WriteLine("Lines " + cso.Lines.Count);
+			Console.WriteLine("Lines " + cso.Lines[0].ForeignIdentity);
+			Console.WriteLine("Payments " + cso.Payments.Count);
+			Console.WriteLine("Payments 0 " + cso.Payments[0].Amount);
+
+			Console.ReadLine();
+
+		}
+
 		static void TestClaimReserve() {
 
 			// Single Claim
 			string xml = "<Claim><ClaimNo>123</ClaimNo><Reserves><Reserve><Value>100</Value></Reserve><Reserve><Value>200</Value></Reserve></Reserves></Claim>";
 
-			Claim c = xml.DeserializeXml<Claim>();
+			Claim c = xml.DeserializeXml2<Claim>();
 
 			if (c != null) {
 				Console.WriteLine(c.ClaimNo);

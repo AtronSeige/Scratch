@@ -50,6 +50,11 @@ namespace ScratchCollection
 			t3.lst.Add(t_2);
 			Console.WriteLine(t3.ToString());
 
+			// This throws an Exception!
+			//List<string> strings = null;
+			//foreach (string s in strings) {
+			//	Console.WriteLine("what");
+			//}
 
 			Console.ReadLine();
 		}

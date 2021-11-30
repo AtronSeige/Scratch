@@ -6,6 +6,11 @@ using System.Text;
 namespace ScratchException {
 	class App {
 		public void Run() {
+			//TestProcessException();
+			ExToStringTest();
+		}
+
+		private void TestProcessException() {
 			try {
 				Exception inner = new Exception("inner");
 				inner.Data.Add("1", "one");
@@ -18,7 +23,6 @@ namespace ScratchException {
 
 			}
 		}
-
 
 		private static string ProcessException(Exception ex) {
 			if (ex == null) return string.Empty;
@@ -63,6 +67,21 @@ namespace ScratchException {
 				sb.ToString());
 
 				return errstr;
+			}
+		}
+
+		private void ExToStringTest() {
+			try {
+
+				Console.WriteLine(new Exception("bubbles").ToString());
+
+				Exception ex = new Exception("Something went wrong", new AggregateException("Aggregate"));
+
+				Console.WriteLine(ex.ToString());
+
+				throw new ApplicationException("application",  new Exception("timmy", new BadImageFormatException()));
+			} catch (Exception ex2) {
+				Console.WriteLine(ex2.ToString());
 			}
 		}
 	}
