@@ -22,13 +22,41 @@ namespace ScratchXML
 				//TestClaimReserve();
 				//TestXmlDocument();
 
-				TestDeserializeCreateSalesOrder();
+				//TestDeserializeCreateSalesOrder();
+
+				TestCollectionOfCustomer();
 			}
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex.Message);
 				Console.ReadLine();
 			}
+		}
+
+		private static void TestCollectionOfCustomer() {
+			string xml = @"
+				<Customers>
+					<Customer>
+						<Customer_ID>1</Customer_ID>
+						<Customer_Name>Jaco</Customer_Name>
+					</Customer>
+					<Customer>
+						<Customer_ID>2</Customer_ID>
+						<Customer_Name>Jannie</Customer_Name>
+					</Customer>
+					<Customer>
+						<Customer_ID>3</Customer_ID>
+						<Customer_Name>Pietie</Customer_Name>
+					</Customer>
+				</Customers>
+				";
+
+			// This allows us to extract the Customer from the Customers, even though we do not have a Customers XML Element.
+
+			//List<Customer> customers = xml.DeserializeXml<List<Customer>>();
+			List<Customer> customers = xml.DeserializeXml2<List<Customer>>("Customers");
+
+			Console.WriteLine(customers.Count());
 		}
 
 		private static void TestDeserializeCreateSalesOrder() {
