@@ -87,7 +87,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchTemplate", "ScratchT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchHttpClient_Net5", "ScratchHttpClient_Net5\ScratchHttpClient_Net5.csproj", "{ABCEA4C7-3968-46DC-93DC-B1ABECB18E71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchNetworking", "ScratchNetworking\ScratchNetworking.csproj", "{D392CC4B-6DEE-4A26-AA45-57A6F189C7B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchNetworking", "ScratchNetworking\ScratchNetworking.csproj", "{D392CC4B-6DEE-4A26-AA45-57A6F189C7B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchJSON", "ScratchJSON\ScratchJSON.csproj", "{6176BA40-8F2C-439F-A73A-693914E76BC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -267,6 +269,10 @@ Global
 		{D392CC4B-6DEE-4A26-AA45-57A6F189C7B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D392CC4B-6DEE-4A26-AA45-57A6F189C7B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D392CC4B-6DEE-4A26-AA45-57A6F189C7B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6176BA40-8F2C-439F-A73A-693914E76BC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6176BA40-8F2C-439F-A73A-693914E76BC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6176BA40-8F2C-439F-A73A-693914E76BC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6176BA40-8F2C-439F-A73A-693914E76BC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
