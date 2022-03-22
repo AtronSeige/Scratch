@@ -388,8 +388,7 @@ namespace ScratchXML
 			XmlAttribute jsonNS = prontoOrder.CreateAttribute("xmlns:jsonns");
 			jsonNS.Value = "http://james.newtonking.com/projects/json";
 
-			XmlAttribute jsonArr = prontoOrder.CreateAttribute("jsonns:Array");
-			jsonArr.Value = "true";
+			
 
 			XmlElement root = prontoOrder.CreateElement("prontoorder");
 			root.SetAttributeNode(jsonNS);
@@ -400,86 +399,158 @@ namespace ScratchXML
 			XmlElement unique_order_number = prontoOrder.CreateElement("unique_order_number");
 			unique_order_number.InnerText = "123"; //OrderID
 
-			XmlElement invoice_no = prontoOrder.CreateElement("invoice_no");
-			invoice_no.InnerText = "123"; //OrderID
+			//XmlElement invoice_no = prontoOrder.CreateElement("invoice_no");
+			//invoice_no.InnerText = "123"; //OrderID
 
-			XmlElement account_code = prontoOrder.CreateElement("account_code");
-			account_code.InnerText = "123"; //Pronto Debtor
+			//XmlElement account_code = prontoOrder.CreateElement("account_code");
+			//account_code.InnerText = "123"; //Pronto Debtor
 
-			XmlElement warehouse_code = prontoOrder.CreateElement("warehouse_code");
-			warehouse_code.InnerText = "123"; //Store Branch Code
+			//XmlElement warehouse_code = prontoOrder.CreateElement("warehouse_code");
+			//warehouse_code.InnerText = "123"; //Store Branch Code
 
-			XmlElement priority_code = prontoOrder.CreateElement("priority_code");
-			priority_code.InnerText = "123"; //???
+			//XmlElement priority_code = prontoOrder.CreateElement("priority_code");
+			//priority_code.InnerText = "123"; //???
 
-			XmlElement rep_code = prontoOrder.CreateElement("rep_code");
-			rep_code.InnerText = "123"; //???
+			//XmlElement rep_code = prontoOrder.CreateElement("rep_code");
+			//rep_code.InnerText = "123"; //???
 
-			XmlElement territory_code = prontoOrder.CreateElement("territory_code");
-			territory_code.InnerText = "123"; //???
+			//XmlElement territory_code = prontoOrder.CreateElement("territory_code");
+			//territory_code.InnerText = "123"; //???
 
-			XmlElement date = prontoOrder.CreateElement("date");
-			date.InnerText = "123"; //Order date
-
-			root.AppendChild(customer_reference);
-			root.AppendChild(unique_order_number);
-			root.AppendChild(invoice_no);
-			root.AppendChild(account_code);
-			root.AppendChild(warehouse_code);
-			root.AppendChild(priority_code);
-			root.AppendChild(rep_code);
-			root.AppendChild(territory_code);
-			root.AppendChild(date);
-
-			prontoOrder.AppendChild(root);
+			//XmlElement date = prontoOrder.CreateElement("date");
+			//date.InnerText = "123"; //Order date
 
 			
 
-			/* XML To Match
-			 * 
-				<prontoorder xmlns:jsonns="http://james.newtonking.com/projects/json">
-				  <customer_reference>12151</customer_reference>
-				  <unique_order_number>12151</unique_order_number>
-				  <invoice_no>12151</invoice_no>
-				  <account_code>0033014</account_code>
-				  <warehouse_code>100</warehouse_code>
-				  <priority_code>5</priority_code>
-				  <rep_code>1</rep_code>
-				  <territory_code>310</territory_code>
-				  <date>22-03-2022</date>
-				  <addresses xmlns:jsonns="http://james.newtonking.com/projects/json" jsonns:Array="true">
-					<address_type>DA</address_type>
-					<address1>eStar Online UAT</address1>
-					<address2>1 Queen Street</address2>
-					<address4>Melbourne</address4>
-					<address5>VIC</address5>
-					<address6>AUS</address6>
-					<address7>Melbourne</address7>
-					<postcode>3000</postcode>
-					<phone>+0000</phone>
-				  </addresses>
-				  <lines xmlns:jsonns="http://james.newtonking.com/projects/json" jsonns:Array="true">
-					<line_type>SN</line_type>
-					<item_code>E-GIFT</item_code>
-					<item_price>50.0000</item_price>
-					<item_price_tax_code>F</item_price_tax_code>
-					<ordered_qty>1</ordered_qty>
-				  </lines>
-				  <payments xmlns:jsonns="http://james.newtonking.com/projects/json" jsonns:Array="true">
-					<amount>50.0000</amount>
-					<store_id>310</store_id>
-					<terminal_no>1</terminal_no>
-					<money_type>V</money_type>
-				  </payments>
-				</prontoorder>
-			 */
+			
 
-			Console.WriteLine(prontoOrder.InnerXml);
+
+
+			root.AppendChild(customer_reference);
+			root.AppendChild(unique_order_number);
+			//root.AppendChild(invoice_no);
+			//root.AppendChild(account_code);
+			//root.AppendChild(warehouse_code);
+			//root.AppendChild(priority_code);
+			//root.AppendChild(rep_code);
+			//root.AppendChild(territory_code);
+			//root.AppendChild(date);
+			root.AppendChild(CreateLineElement(prontoOrder, "NS","123","5.00","1","1"));
+			root.AppendChild(CreateLineElement(prontoOrder, "AB", "234", "15.00", "1", "2"));
+			root.AppendChild(CreateLineElement(prontoOrder, "SC", "345", "25.00", "1", "4"));
+			root.AppendChild(CreatePaymentElement(prontoOrder, "20", "123", "1", "CC"));
+			root.AppendChild(CreatePaymentElement(prontoOrder, "25", "123", "1", "V"));
+
+			prontoOrder.AppendChild(root);
+
+			// Delete the Payment Test
+			XmlNodeList payments = prontoOrder.SelectNodes("prontoorder/payments");
+			foreach (XmlNode payment in payments) {
+				//This looks weird, but this is faster than traversing the tree
+				// top down to get the correct parent.
+				//payment.ParentNode.RemoveChild(payment);
+			}
+
+			// Delete the Lines Test
+			XmlNodeList lines = prontoOrder.SelectNodes("prontoorder/lines");
+			foreach (XmlNode line in lines) {
+				//This looks weird, but this is faster than traversing the tree
+				// top down to get the correct parent.
+				line.ParentNode.RemoveChild(line);
+			}
+
+			//This is to make it pretty print :)
+			XDocument x = XDocument.Parse(prontoOrder.OuterXml);
+
+			Console.WriteLine(x.ToString());
 
 			//foreach (XmlNode voucher in vouchers) {
 			//	Console.WriteLine(voucher.SelectSingleNode("id").InnerText);
 			//	Console.WriteLine(voucher.SelectSingleNode("quantity").InnerText);
 			//}
+		}
+
+		private static XmlElement CreateLineElement(XmlDocument doc,
+			string sLine_type, string sItem_code, string sItem_price, string sItem_price_tax_code, string sOrdered_qty) {
+
+			//<lines xmlns:jsonns="http://james.newtonking.com/projects/json" jsonns:Array="true">
+			//		<line_type>SN</line_type>
+			//		<item_code>E-GIFT</item_code>
+			//		<item_price>50.0000</item_price>
+			//		<item_price_tax_code>F</item_price_tax_code>
+			//		<ordered_qty>1</ordered_qty>
+			//	  </lines>
+
+			XmlAttribute jsonNS = doc.CreateAttribute("xmlns:jsonns");
+			jsonNS.Value = "http://james.newtonking.com/projects/json";
+
+			XmlAttribute jsonArr = doc.CreateAttribute("jsonns:Array");
+			jsonArr.Value = "true";
+
+			XmlElement line_type = doc.CreateElement("line_type");
+			line_type.InnerText = sLine_type;
+
+			XmlElement item_code = doc.CreateElement("item_code");
+			item_code.InnerText = sItem_code;
+
+			XmlElement item_price = doc.CreateElement("item_price");
+			item_price.InnerText = sItem_price;
+
+			XmlElement item_price_tax_code = doc.CreateElement("item_price_tax_code");
+			item_price_tax_code.InnerText = sItem_price_tax_code;
+
+			XmlElement ordered_qty = doc.CreateElement("ordered_qty");
+			ordered_qty.InnerText = sOrdered_qty;
+
+			XmlElement lines = doc.CreateElement("lines");
+			lines.SetAttributeNode(jsonNS);
+			lines.SetAttributeNode(jsonArr);
+			lines.AppendChild(line_type);
+			lines.AppendChild(item_code);
+			lines.AppendChild(item_price);
+			lines.AppendChild(item_price_tax_code);
+			lines.AppendChild(ordered_qty);
+
+			return lines;
+		}
+
+		private static XmlElement CreatePaymentElement(XmlDocument doc,
+			string sAmount, string sStore_id, string sTerminal_no, string sMoney_type) {
+
+			//<payments xmlns:jsonns="http://james.newtonking.com/projects/json" jsonns:Array="true">
+			//		<amount>50.0000</amount>
+			//		<store_id>310</store_id>
+			//		<terminal_no>1</terminal_no>
+			//		<money_type>V</money_type>
+			//	  </payments>
+
+			XmlAttribute jsonNS = doc.CreateAttribute("xmlns:jsonns");
+			jsonNS.Value = "http://james.newtonking.com/projects/json";
+
+			XmlAttribute jsonArr = doc.CreateAttribute("jsonns:Array");
+			jsonArr.Value = "true";
+
+			XmlElement amount = doc.CreateElement("amount");
+			amount.InnerText = sAmount;
+
+			XmlElement store_id = doc.CreateElement("store_id");
+			store_id.InnerText = sStore_id;
+
+			XmlElement terminal_no = doc.CreateElement("terminal_no");
+			terminal_no.InnerText = sTerminal_no;
+
+			XmlElement money_type = doc.CreateElement("money_type");
+			money_type.InnerText = sMoney_type;
+
+			XmlElement payments = doc.CreateElement("payments");
+			payments.SetAttributeNode(jsonNS);
+			payments.SetAttributeNode(jsonArr);
+			payments.AppendChild(amount);
+			payments.AppendChild(store_id);
+			payments.AppendChild(terminal_no);
+			payments.AppendChild(money_type);
+
+			return payments;
 		}
 	}
 }
