@@ -24,13 +24,16 @@ namespace ScratchXML
 
 				//TestDeserializeCreateSalesOrder();
 
-				TestCollectionOfCustomer();
+				//TestCollectionOfCustomer();
+
+				ProntoOrderXML();
 			}
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex.Message);
-				Console.ReadLine();
 			}
+
+			Console.ReadLine();
 		}
 
 		private static void TestCollectionOfCustomer() {
@@ -360,6 +363,123 @@ namespace ScratchXML
 			//	Console.WriteLine($"LoadXml Exception {ex.Message} with [{xml}]");
 			//}
 
+		}
+
+		private static void ProntoOrderXML() {
+
+			//Build a payload for testing
+			int childCount = 3;
+			string payloadXml = "<payload><orderID>1430526</orderID><externalReferences array=\"true\" /><childOrderID>1430529</childOrderID>";
+
+			for (int i = 0; i < childCount; i++) { 
+				payloadXml += $"<vouchers array=\"true\"><id>{i+1}</id><quantity>{i+1}</quantity></vouchers>"; 
+			}
+
+			payloadXml += "</payload>";
+
+			XmlDocument payload = new XmlDocument();
+			payload.LoadXml(payloadXml);
+
+			// Get the vouchers from the payload
+			XmlNodeList vouchers = payload.SelectNodes("/payload/vouchers");
+
+			XmlDocument prontoOrder = new XmlDocument();
+
+			XmlAttribute jsonNS = prontoOrder.CreateAttribute("xmlns:jsonns");
+			jsonNS.Value = "http://james.newtonking.com/projects/json";
+
+			XmlAttribute jsonArr = prontoOrder.CreateAttribute("jsonns:Array");
+			jsonArr.Value = "true";
+
+			XmlElement root = prontoOrder.CreateElement("prontoorder");
+			root.SetAttributeNode(jsonNS);
+
+			XmlElement customer_reference = prontoOrder.CreateElement("customer_reference");
+			customer_reference.InnerText = "123"; //OrderID
+
+			XmlElement unique_order_number = prontoOrder.CreateElement("unique_order_number");
+			unique_order_number.InnerText = "123"; //OrderID
+
+			XmlElement invoice_no = prontoOrder.CreateElement("invoice_no");
+			invoice_no.InnerText = "123"; //OrderID
+
+			XmlElement account_code = prontoOrder.CreateElement("account_code");
+			account_code.InnerText = "123"; //Pronto Debtor
+
+			XmlElement warehouse_code = prontoOrder.CreateElement("warehouse_code");
+			warehouse_code.InnerText = "123"; //Store Branch Code
+
+			XmlElement priority_code = prontoOrder.CreateElement("priority_code");
+			priority_code.InnerText = "123"; //???
+
+			XmlElement rep_code = prontoOrder.CreateElement("rep_code");
+			rep_code.InnerText = "123"; //???
+
+			XmlElement territory_code = prontoOrder.CreateElement("territory_code");
+			territory_code.InnerText = "123"; //???
+
+			XmlElement date = prontoOrder.CreateElement("date");
+			date.InnerText = "123"; //Order date
+
+			root.AppendChild(customer_reference);
+			root.AppendChild(unique_order_number);
+			root.AppendChild(invoice_no);
+			root.AppendChild(account_code);
+			root.AppendChild(warehouse_code);
+			root.AppendChild(priority_code);
+			root.AppendChild(rep_code);
+			root.AppendChild(territory_code);
+			root.AppendChild(date);
+
+			prontoOrder.AppendChild(root);
+
+			
+
+			/* XML To Match
+			 * 
+				<prontoorder xmlns:jsonns="http://james.newtonking.com/projects/json">
+				  <customer_reference>12151</customer_reference>
+				  <unique_order_number>12151</unique_order_number>
+				  <invoice_no>12151</invoice_no>
+				  <account_code>0033014</account_code>
+				  <warehouse_code>100</warehouse_code>
+				  <priority_code>5</priority_code>
+				  <rep_code>1</rep_code>
+				  <territory_code>310</territory_code>
+				  <date>22-03-2022</date>
+				  <addresses xmlns:jsonns="http://james.newtonking.com/projects/json" jsonns:Array="true">
+					<address_type>DA</address_type>
+					<address1>eStar Online UAT</address1>
+					<address2>1 Queen Street</address2>
+					<address4>Melbourne</address4>
+					<address5>VIC</address5>
+					<address6>AUS</address6>
+					<address7>Melbourne</address7>
+					<postcode>3000</postcode>
+					<phone>+0000</phone>
+				  </addresses>
+				  <lines xmlns:jsonns="http://james.newtonking.com/projects/json" jsonns:Array="true">
+					<line_type>SN</line_type>
+					<item_code>E-GIFT</item_code>
+					<item_price>50.0000</item_price>
+					<item_price_tax_code>F</item_price_tax_code>
+					<ordered_qty>1</ordered_qty>
+				  </lines>
+				  <payments xmlns:jsonns="http://james.newtonking.com/projects/json" jsonns:Array="true">
+					<amount>50.0000</amount>
+					<store_id>310</store_id>
+					<terminal_no>1</terminal_no>
+					<money_type>V</money_type>
+				  </payments>
+				</prontoorder>
+			 */
+
+			Console.WriteLine(prontoOrder.InnerXml);
+
+			//foreach (XmlNode voucher in vouchers) {
+			//	Console.WriteLine(voucher.SelectSingleNode("id").InnerText);
+			//	Console.WriteLine(voucher.SelectSingleNode("quantity").InnerText);
+			//}
 		}
 	}
 }

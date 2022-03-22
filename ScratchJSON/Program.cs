@@ -1,11 +1,18 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Xml;
 
 namespace ScratchJSON {
 	internal class Program {
 		static void Main(string[] args) {
-			Console.WriteLine("Hello World!");
+
+			//XmlToJson();
+			QueryJson();
+			Console.ReadLine();
+		}
+
+		static void XmlToJson() {
 
 			XmlDocument doc = new();
 
@@ -14,8 +21,22 @@ namespace ScratchJSON {
 			string json = JsonConvert.SerializeXmlNode(doc, Newtonsoft.Json.Formatting.Indented);
 
 			Console.WriteLine(json);
+		}
 
-			Console.ReadLine();
+		static void QueryJson() {
+			string json = @"{'invoice_no':'      11932','status_code':'17','lines':[{'sequence':1,'type':'SN','external_id':3011},{'sequence':2,'type':'SC'}],'order_number':'11932','result':'Order inserted with status of \'Rdy to Print Invoice\''}";
+
+			JObject jsonObject = JObject.Parse(json);
+
+			Console.WriteLine("invoice_no: " + (string)jsonObject["invoice_no"]);
+			Console.WriteLine("result: " + (string)jsonObject["result"]);
+
+			JArray lines = (JArray)jsonObject["lines"];
+			foreach (JObject line in lines) {
+				Console.WriteLine("sequence: " + (string)line["sequence"]);
+				Console.WriteLine("type: " + (string)line["type"]);
+				Console.WriteLine("external_id: " + (string)line["external_id"]);
+			}
 		}
 	}
 }
