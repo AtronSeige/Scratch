@@ -1,4 +1,5 @@
 ﻿using Microsoft.CSharp;
+using Newtonsoft.Json;
 using ScratchXML.Models;
 using System;
 using System.CodeDom.Compiler;
@@ -388,8 +389,7 @@ namespace ScratchXML
 			XmlAttribute jsonNS = prontoOrder.CreateAttribute("xmlns:jsonns");
 			jsonNS.Value = "http://james.newtonking.com/projects/json";
 
-			
-
+			//XmlElement root = prontoOrder.CreateElement("jsonns", "prontoorder", "http://james.newtonking.com/projects/json");
 			XmlElement root = prontoOrder.CreateElement("prontoorder");
 			root.SetAttributeNode(jsonNS);
 
@@ -420,11 +420,6 @@ namespace ScratchXML
 			//XmlElement date = prontoOrder.CreateElement("date");
 			//date.InnerText = "123"; //Order date
 
-			
-
-			
-
-
 
 			root.AppendChild(customer_reference);
 			root.AppendChild(unique_order_number);
@@ -438,8 +433,8 @@ namespace ScratchXML
 			root.AppendChild(CreateLineElement(prontoOrder, "NS","123","5.00","1","1"));
 			root.AppendChild(CreateLineElement(prontoOrder, "AB", "234", "15.00", "1", "2"));
 			root.AppendChild(CreateLineElement(prontoOrder, "SC", "345", "25.00", "1", "4"));
-			root.AppendChild(CreatePaymentElement(prontoOrder, "20", "123", "1", "CC"));
-			root.AppendChild(CreatePaymentElement(prontoOrder, "25", "123", "1", "V"));
+			//root.AppendChild(CreatePaymentElement(prontoOrder, "20", "123", "1", "CC"));
+			//root.AppendChild(CreatePaymentElement(prontoOrder, "25", "123", "1", "V"));
 
 			prontoOrder.AppendChild(root);
 
@@ -448,7 +443,7 @@ namespace ScratchXML
 			foreach (XmlNode payment in payments) {
 				//This looks weird, but this is faster than traversing the tree
 				// top down to get the correct parent.
-				//payment.ParentNode.RemoveChild(payment);
+				payment.ParentNode.RemoveChild(payment);
 			}
 
 			// Delete the Lines Test
@@ -456,8 +451,11 @@ namespace ScratchXML
 			foreach (XmlNode line in lines) {
 				//This looks weird, but this is faster than traversing the tree
 				// top down to get the correct parent.
-				line.ParentNode.RemoveChild(line);
+				//line.ParentNode.RemoveChild(line);
 			}
+
+			//XmlNode changeing = prontoOrder.SelectSingleNode("prontoorder/unique_order_number");
+			//changeing.InnerText = "JACO";
 
 			//This is to make it pretty print :)
 			XDocument x = XDocument.Parse(prontoOrder.OuterXml);
@@ -468,6 +466,10 @@ namespace ScratchXML
 			//	Console.WriteLine(voucher.SelectSingleNode("id").InnerText);
 			//	Console.WriteLine(voucher.SelectSingleNode("quantity").InnerText);
 			//}
+
+			string json = JsonConvert.SerializeXmlNode(prontoOrder, Newtonsoft.Json.Formatting.Indented);
+
+			Console.WriteLine(json);
 		}
 
 		private static XmlElement CreateLineElement(XmlDocument doc,
@@ -480,12 +482,6 @@ namespace ScratchXML
 			//		<item_price_tax_code>F</item_price_tax_code>
 			//		<ordered_qty>1</ordered_qty>
 			//	  </lines>
-
-			XmlAttribute jsonNS = doc.CreateAttribute("xmlns:jsonns");
-			jsonNS.Value = "http://james.newtonking.com/projects/json";
-
-			XmlAttribute jsonArr = doc.CreateAttribute("jsonns:Array");
-			jsonArr.Value = "true";
 
 			XmlElement line_type = doc.CreateElement("line_type");
 			line_type.InnerText = sLine_type;
@@ -503,8 +499,20 @@ namespace ScratchXML
 			ordered_qty.InnerText = sOrdered_qty;
 
 			XmlElement lines = doc.CreateElement("lines");
-			lines.SetAttributeNode(jsonNS);
+			lines.Prefix = "jsonns";
+
+			//XmlAttribute jsonNS = doc.CreateAttribute("xmlns:jsonns");
+			//jsonNS.Value = "http://james.newtonking.com/projects/json";
+			//lines.SetAttributeNode(jsonNS);
+
+			XmlAttribute jsonArr = doc.CreateAttribute("jsonns", "Array", "http://james.newtonking.com/projects/json");
+			jsonArr.Value = "true";
+			//jsonArr.Prefix = "jsonns";
+			//XmlAttribute jsonArr = lines.SetAttributeNode("jsonns:Array");
+			//jsonArr.Value = "true";
 			lines.SetAttributeNode(jsonArr);
+			//lines.SetAttribute("Array", "jsonns", "true");
+
 			lines.AppendChild(line_type);
 			lines.AppendChild(item_code);
 			lines.AppendChild(item_price);

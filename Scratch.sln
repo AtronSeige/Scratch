@@ -85,11 +85,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchHelpers", "ScratchHe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchTemplate", "ScratchTemplate\ScratchTemplate.csproj", "{7A723E28-62C3-43DF-95DF-C4F4BD004493}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchHttpClient_Net5", "ScratchHttpClient_Net5\ScratchHttpClient_Net5.csproj", "{ABCEA4C7-3968-46DC-93DC-B1ABECB18E71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchHttpClient", "ScratchHttpClient_Net5\ScratchHttpClient.csproj", "{ABCEA4C7-3968-46DC-93DC-B1ABECB18E71}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchNetworking", "ScratchNetworking\ScratchNetworking.csproj", "{D392CC4B-6DEE-4A26-AA45-57A6F189C7B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchJSON", "ScratchJSON\ScratchJSON.csproj", "{6176BA40-8F2C-439F-A73A-693914E76BC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchJSON", "ScratchJSON\ScratchJSON.csproj", "{6176BA40-8F2C-439F-A73A-693914E76BC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

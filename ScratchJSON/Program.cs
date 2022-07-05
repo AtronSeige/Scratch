@@ -8,7 +8,8 @@ namespace ScratchJSON {
 		static void Main(string[] args) {
 
 			//XmlToJson();
-			QueryJson();
+			//QueryJson();
+			CreateJson();
 			Console.ReadLine();
 		}
 
@@ -37,6 +38,17 @@ namespace ScratchJSON {
 				Console.WriteLine("type: " + (string)line["type"]);
 				Console.WriteLine("external_id: " + (string)line["external_id"]);
 			}
+		}
+
+		static void CreateJson() {
+			string test1 = "hi";
+			int test2 = 2;
+			JObject jsonObject = new JObject();
+			jsonObject.Add(new JProperty("greet", test1));
+			jsonObject.Add(new JProperty("num", test2));
+
+			Console.WriteLine(jsonObject.ToString());
+			Console.WriteLine("done");
 		}
 	}
 }

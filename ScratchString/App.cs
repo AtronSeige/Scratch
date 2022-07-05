@@ -55,7 +55,7 @@ namespace ScratchString {
 
 			//TestReplace();
 
-			//TestSubstringAndIndexOf();
+			TestSubstringAndIndexOf();
 
 			//TestNulls();
 
@@ -71,7 +71,17 @@ namespace ScratchString {
 			////NonASCII7Char();
 			//SubstringLen();
 
-			NameSurnameTest();
+			//NameSurnameTest();
+
+			//Console.WriteLine(ToTitleCase("mrs"));
+			//Console.WriteLine(ToTitleCase("Miss"));
+			//Console.WriteLine(ToTitleCase("MR"));
+			//Console.WriteLine(ToTitleCase("mR"));
+			//Console.WriteLine(ToTitleCase("MisS"));
+			//Console.WriteLine(ToTitleCase("m"));
+			//Console.WriteLine(ToTitleCase("M"));
+
+
 		}
 
 		private void NullCastTest() {
@@ -234,6 +244,9 @@ namespace ScratchString {
 			return new string(a);
 		}
 
+		public string ToTitleCase(string s) {
+			return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(s.ToLower());
+		}
 
 		public void DifferentDecimalTString() {
 			decimal value = 16325.62M;
@@ -364,6 +377,12 @@ namespace ScratchString {
 			Console.WriteLine(s2.Split('\\').Last());
 			Console.WriteLine(s3.Split('\\').Last());
 			Console.WriteLine(s4.Split('\\').Where(x => x != String.Empty).Last());
+
+			s1 = "tech@isams.net;jaco.hamilton-attwell@estaronline.com;Francis.Rapadas@estaronline.com;ashleigh.gilluley@harrolds.com.au;";
+			string[] arrS1 = s1.Split(';');
+			foreach (string s in arrS1) {
+				Console.WriteLine($"Value [{s}]");
+			}
 		}
 
 		public void TestDictionary() {
@@ -413,6 +432,7 @@ namespace ScratchString {
 		public void TestSubstringAndIndexOf() {
 			string test = "SBA40N203515   ;10;000;6805   ";
 
+			Console.WriteLine("Substring 0 to text len + 1 {0}", test.Substring(0, test.Length + 1));
 			Console.WriteLine("Substring 0 indexof first ; {0}", test.Substring(0, test.IndexOf(';')));
 			Console.WriteLine("Substring from first ; (add one to skip the ;) {0}", test.Substring(test.IndexOf(';') + 1));
 

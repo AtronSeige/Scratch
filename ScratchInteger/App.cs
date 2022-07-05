@@ -19,7 +19,15 @@ namespace ScratchInteger {
 			//GetNext5(18);
 			//GetNext5(100);
 
-			TestTryParse();
+			//TestTryParse();
+			TestIncrement();
+		}
+
+		private void TestIncrement() {
+			int count = 1;
+			for (int i = 0; i < 10; i++) {
+				Console.WriteLine($"Increment Test {count++}");
+			}
 		}
 
 		private void TestTryParse() {
