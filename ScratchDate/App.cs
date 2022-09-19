@@ -41,7 +41,9 @@ namespace ScratchDateTime {
 
 			//TestDifferenceInSeconds();
 
-			TestDifferentFormats();
+			//TestDifferentFormats();
+
+			TestDelay();
 		}
 
 		private void TestDifferenceInSeconds() {
@@ -217,5 +219,15 @@ namespace ScratchDateTime {
 			public bool IsHappy { get; set; }
 		}
 
+		private void TestDelay() {
+			DateTime startTime = DateTime.Now;
+			Console.WriteLine($"Starting at {DateTime.Now.Subtract(startTime).TotalMilliseconds}");
+
+			while (DateTime.Now.Subtract(startTime).TotalMilliseconds < 1000) {
+				Console.WriteLine($"A second has not passed yet, only {DateTime.Now.Subtract(startTime).TotalMilliseconds}");
+			}
+
+			Console.WriteLine($"A second has passed!");
+		}
 	}
 }

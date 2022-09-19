@@ -19,8 +19,8 @@ namespace ScratchInteger {
 			//GetNext5(18);
 			//GetNext5(100);
 
-			//TestTryParse();
-			TestIncrement();
+			TestTryParse();
+			//TestIncrement();
 		}
 
 		private void TestIncrement() {
@@ -32,28 +32,31 @@ namespace ScratchInteger {
 
 		private void TestTryParse() {
 
-			int i = 0;
+			int i = 666;
 			string value = "zero";
+			Console.WriteLine($"Parse testing for \"{value}\" and {i}");
 			if (!int.TryParse(value, out i)) {
-				Console.WriteLine($"Parse failed for {value}");
+				Console.WriteLine($"Parse failed for {value}, the value of i is {i}");
+			} else {
+				Console.WriteLine($"Parse succeeded for {value}, the value of i is {i}");
 			}
 
-			i = 0;
-			value = "0";
-			if (!int.TryParse(value, out i)) {
-				Console.WriteLine($"Parse failed for {value}");
-			} else {
-				Console.WriteLine($"Parsing {value} returned {i}");
-			}
+			//i = 0;
+			//value = "0";
+			//if (!int.TryParse(value, out i)) {
+			//	Console.WriteLine($"Parse failed for {value}");
+			//} else {
+			//	Console.WriteLine($"Parsing {value} returned {i}");
+			//}
 
-			// Immediately check the value after the parse
-			i = 0;
-			value = "-1";
-			if (!int.TryParse(value, out i) || i <= 0) {
-				Console.WriteLine($"Parse failed for {value} or returned less that 0 ({i})");
-			} else {
-				Console.WriteLine($"Parsing {value} returned {i}");
-			}
+			//// Immediately check the value after the parse
+			//i = 0;
+			//value = "-1";
+			//if (!int.TryParse(value, out i) || i <= 0) {
+			//	Console.WriteLine($"Parse failed for {value} or returned less that 0 ({i})");
+			//} else {
+			//	Console.WriteLine($"Parsing {value} returned {i}");
+			//}
 
 		}
 

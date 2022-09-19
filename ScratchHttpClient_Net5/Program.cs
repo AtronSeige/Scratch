@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ScratchHttpClient_Net5 {
+namespace ScratchHttpClient {
 	internal class Program {
 		static void Main(string[] args) {
 			try {
@@ -8,9 +8,10 @@ namespace ScratchHttpClient_Net5 {
 				a.Run();
 			} catch (Exception ex) {
 				Console.WriteLine(ex.Message);
-				Console.ReadLine();
+				
 			}
-
+			Console.WriteLine("Done!");
+			Console.ReadLine();
 		}
 	}
 }

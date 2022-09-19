@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 using System.Xml;
 
 namespace ScratchJSON {
@@ -49,6 +50,33 @@ namespace ScratchJSON {
 
 			Console.WriteLine(jsonObject.ToString());
 			Console.WriteLine("done");
+		}
+
+		static void ConvertClassToJSON() {
+			TestClass tc = new TestClass();
+			tc.ID = 1;
+			tc.Name = "Jaco";
+
+			TestClass2 tc2_ZA = new TestClass2();
+			tc2_ZA.ID = 1;
+			tc2_ZA.Value = "ZA";
+
+			TestClass2 tc2_NZ = new TestClass2();
+			tc2_NZ.ID = 1;
+			tc2_NZ.Value = "NZ";
+
+		}
+
+		public class TestClass {
+			public int ID { get; set; }
+			public string Name { get; set; }
+			public List<TestClass2> TC2 { get; set; }
+		}
+
+		public class TestClass2 {
+			public int ID { get; set; }
+
+			public string Value { get; set; }
 		}
 	}
 }
