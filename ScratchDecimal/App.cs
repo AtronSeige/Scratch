@@ -12,17 +12,17 @@ namespace ScratchDecimal {
 			decimal d = 1254m;
 			Console.WriteLine(d);
 
-			RoundTest(244385.964912281m);
-			RoundTest(244385.96491228m);
-			RoundTest(244385.9649122m);
-			RoundTest(244385.964912m);
-			RoundTest(244385.96491m);
-			RoundTest(244385.9649m);
-			RoundTest(244385.964m);
-			RoundTest(244385.96m);
+			//RoundTest(244385.964912281m);
+			//RoundTest(244385.96491228m);
+			//RoundTest(244385.9649122m);
+			//RoundTest(244385.964912m);
+			//RoundTest(244385.96491m);
+			//RoundTest(244385.9649m);
+			//RoundTest(244385.964m);
+			//RoundTest(244385.96m);
 
-			VATTestFromExcl(244385.97m);
-			VATTestFromExclWithRoudning(244385.97m);
+			//VATTestFromExcl(244385.97m);
+			//VATTestFromExclWithRoudning(244385.97m);
 
 			Formating();
 		}
@@ -62,6 +62,12 @@ namespace ScratchDecimal {
 
 			Console.WriteLine(d1.ToString());
 			Console.WriteLine(d1.ToString("0.00"));
+
+			Console.WriteLine($"Instring {d1:0.00}");
+
+			int i = 33;
+
+			Console.WriteLine($"Instring int {i:0.00}");
 		}
 	}
 }

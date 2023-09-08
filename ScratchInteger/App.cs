@@ -9,6 +9,12 @@ namespace ScratchInteger {
 		}
 
 		public void Run() {
+			//TestMod();
+
+			TestFloorCeiling();
+
+
+
 			//this.NullableInt();
 			//this.StringToInt();
 			////Compare();
@@ -19,8 +25,42 @@ namespace ScratchInteger {
 			//GetNext5(18);
 			//GetNext5(100);
 
-			TestTryParse();
+			//TestTryParse();
 			//TestIncrement();
+		}
+
+		private void TestFloorCeiling() {
+
+			decimal itemCount = 1;
+			decimal itemsPerPage = 10;
+
+			Console.WriteLine($"Plain: {itemCount / itemsPerPage}");
+			Console.WriteLine($"Floor: {Math.Floor(itemCount/itemsPerPage)}");
+			Console.WriteLine($"Ceiling: {Math.Ceiling(itemCount / itemsPerPage)}");
+
+
+		}
+
+		private static void TestMod() {
+			int i = 0;
+			int mod = i % 10;
+			Console.WriteLine($"Mod for ({i}) is {mod}");
+
+			i = 5;
+			mod = i % 10;
+			Console.WriteLine($"Mod for ({i}) is {mod}");
+
+			i = 10;
+			mod = i % 10;
+			Console.WriteLine($"Mod for ({i}) is {mod}");
+
+			i = 15;
+			mod = i % 10;
+			Console.WriteLine($"Mod for ({i}) is {mod}");
+
+			i = 19;
+			mod = i % 10;
+			Console.WriteLine($"Mod for ({i}) is {mod}");
 		}
 
 		private void TestIncrement() {

@@ -12,7 +12,12 @@ namespace ScratchLinq
 			//var cars = Car.GenerateList();
 			//GroupByTest(cars);
 
-			TestRandom();
+			//TestRandom();
+
+			TestGroupBy tgb = new TestGroupBy();
+			//tgb.TestGroupBy1();
+			tgb.TestGroupBy2();
+			tgb.TestGroupBy3();
 
 			Console.ReadLine();
 

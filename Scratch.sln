@@ -95,7 +95,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchWebRequestResponse",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchMockHttpWebResponse", "ScratchMockHttpWebResponse\ScratchMockHttpWebResponse.csproj", "{BC8F653D-BBA2-4FC5-9018-DBCB83B4E082}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchConsole", "ScratchConsole\ScratchConsole.csproj", "{3403BE16-31BC-4C05-943B-DA7058B39D0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchConsole", "ScratchConsole\ScratchConsole.csproj", "{3403BE16-31BC-4C05-943B-DA7058B39D0E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchFile", "ScratchFile\ScratchFile.csproj", "{54522A65-A8F0-49EA-B760-4E08A8D83019}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScratchUri", "ScratchUri\ScratchUri.csproj", "{67AC4038-FF10-48A7-8A23-917A08801D20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchGraphics", "ScratchGraphics\ScratchGraphics.csproj", "{748E15DF-ACD2-4520-BE97-709C37158FD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -291,6 +297,18 @@ Global
 		{3403BE16-31BC-4C05-943B-DA7058B39D0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3403BE16-31BC-4C05-943B-DA7058B39D0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3403BE16-31BC-4C05-943B-DA7058B39D0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54522A65-A8F0-49EA-B760-4E08A8D83019}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54522A65-A8F0-49EA-B760-4E08A8D83019}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54522A65-A8F0-49EA-B760-4E08A8D83019}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54522A65-A8F0-49EA-B760-4E08A8D83019}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67AC4038-FF10-48A7-8A23-917A08801D20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67AC4038-FF10-48A7-8A23-917A08801D20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67AC4038-FF10-48A7-8A23-917A08801D20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67AC4038-FF10-48A7-8A23-917A08801D20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{748E15DF-ACD2-4520-BE97-709C37158FD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{748E15DF-ACD2-4520-BE97-709C37158FD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{748E15DF-ACD2-4520-BE97-709C37158FD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{748E15DF-ACD2-4520-BE97-709C37158FD1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

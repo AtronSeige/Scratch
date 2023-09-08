@@ -223,6 +223,46 @@ namespace ScratchNull {
 
 			// If the variable is null, then set it to the right hand value, otherwise keep it as it is.
 			//a ??= 10;
+
+			Foo foo = null;
+
+			if (foo?.ID > 0) {
+				Console.WriteLine("Foo ID exists and greater than zero");
+			} else {
+				Console.WriteLine("Foo ID does not exist or less than or equal to zero");
+			}
+			Console.WriteLine($"Foo ID is {foo?.ID}");
+
+			foo = new Foo();
+			if (foo?.ID > 0) {
+				Console.WriteLine("Foo ID exists and greater than zero");
+			} else {
+				Console.WriteLine("Foo ID does not exist or less than or equal to zero");
+			}
+			Console.WriteLine($"Foo ID is {foo?.ID}");
+
+			foo.ID = 10;
+			if (foo?.ID > 0) {
+				Console.WriteLine("Foo ID exists and greater than zero");
+				Console.WriteLine($"Foo ID is {foo?.ID}");
+			} else {
+				Console.WriteLine("Foo ID does not exist or less than or equal to zero");
+			}
+			Console.WriteLine($"Foo ID is {foo?.ID}");
+
+
+
+		}
+
+		class Foo {
+			public int? ID { get; set; }
+			public string Name { get; set; }
+			public Bar Bar { get; set; }
+		}
+
+		class Bar {
+			public int ID { get; set; }
+			public string Name { get; set; }
 		}
 	}
 }

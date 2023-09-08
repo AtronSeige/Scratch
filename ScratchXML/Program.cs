@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Web;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Schema;
@@ -27,7 +28,9 @@ namespace ScratchXML
 
 				//TestCollectionOfCustomer();
 
-				ProntoOrderXML();
+				//ProntoOrderXML();
+
+				EncodeXML();
 			}
 			catch (Exception ex)
 			{
@@ -559,6 +562,24 @@ namespace ScratchXML
 			payments.AppendChild(money_type);
 
 			return payments;
+		}
+
+		private static void EncodeXML(){
+			//Build a payload for testing
+			int childCount = 3;
+			string payloadXml = "<payload><orderID>1430526</orderID><externalReferences array=\"true\" /><childOrderID>1430529</childOrderID>";
+
+			for (int i = 0; i < childCount; i++) {
+				payloadXml += $"<vouchers array=\"true\"><id>{i + 1}</id><quantity>{i + 1}</quantity></vouchers>";
+			}
+
+			payloadXml += "</payload>";
+
+			XmlDocument payload = new XmlDocument();
+			payload.LoadXml(payloadXml);
+
+            Console.WriteLine("HTMLEncoded");
+            Console.WriteLine( HttpUtility.HtmlEncode(payload.OuterXml));
 		}
 	}
 }

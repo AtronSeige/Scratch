@@ -16,11 +16,11 @@ namespace ScratchDictionary {
 
 			//TestKey();
 			//TestCaseInsensitive();
-			//TestToString();
+			TestToString();
 
 			//TestMissingKey();
 
-			TestAssign();
+			//TestAssign();
 
 		}
 
@@ -708,13 +708,23 @@ namespace ScratchDictionary {
 
 			string s = string.Empty;
 
-			IEnumerable<string> l = d.Select(x => string.Format("<li>{0} - {1}</li>", x.Key, x.Value));
+			IEnumerable<string> list = d.Select(x => string.Format("<li>{0} - {1}</li>", x.Key, x.Value));
 
-			s = string.Join("", l);
+			s = string.Join("", list);
+
+			Console.WriteLine(s); // OUTPUT: <li>one - een</li><li>two - twee</li><li>three - drie</li>
+			
+			s = String.Join(Environment.NewLine, d);
 
 			Console.WriteLine(s);
+			// OUTPUT:
+			//[one, een]
+			//[two, twee]
+			//[three, drie]
 
-
+			s = String.Join("," ,d.Select(x => $"{x.Value}"));
+			
+			Console.WriteLine(s);
 		}
 
 		private void TestToString(Dictionary<string, string> d) {

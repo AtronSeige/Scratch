@@ -6,7 +6,7 @@ namespace ScratchStatic
 	{
 		static void Main(string[] args)
 		{
-			//Class1Test();
+			Class1Test();
 			Class2Test();
 
 			Console.ReadLine();

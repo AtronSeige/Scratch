@@ -4,6 +4,8 @@ using System.Data;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.Encodings.Web;
+using System.Web;
 
 namespace ScratchString {
 	class App {
@@ -55,7 +57,7 @@ namespace ScratchString {
 
 			//TestReplace();
 
-			TestSubstringAndIndexOf();
+			//TestSubstringAndIndexOf();
 
 			//TestNulls();
 
@@ -81,7 +83,7 @@ namespace ScratchString {
 			//Console.WriteLine(ToTitleCase("m"));
 			//Console.WriteLine(ToTitleCase("M"));
 
-
+			TestHTMLSafe();
 		}
 
 		private void NullCastTest() {
@@ -528,6 +530,15 @@ namespace ScratchString {
 			} else {
 				return (fullname, "");
 			}
+		}
+
+
+		private void TestHTMLSafe() {
+
+			string html = "<this>value</this>";
+
+			Console.WriteLine(html);
+			Console.WriteLine(HttpUtility.HtmlEncode(html));
 		}
 	}
 }
