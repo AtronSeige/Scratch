@@ -10,7 +10,8 @@ namespace ScratchJSON {
 
 			//XmlToJson();
 			//QueryJson();
-			CreateJson();
+			//CreateJson();
+			JObjectExcception();
 			Console.ReadLine();
 		}
 
@@ -64,6 +65,43 @@ namespace ScratchJSON {
 			TestClass2 tc2_NZ = new TestClass2();
 			tc2_NZ.ID = 1;
 			tc2_NZ.Value = "NZ";
+
+		}
+
+		static void JObjectExcception() {
+
+			try {
+				
+
+				string json;
+				JObject jsonObject;
+
+				// This throws System.ArgumentNullException
+				//json = null;
+				//jsonObject = JObject.Parse(json);
+
+				// This throws Newtonsoft.Json.JsonReaderException
+				//json = "";
+				//jsonObject = JObject.Parse(json);
+
+				// Invalid JSON.
+				// This throws Newtonsoft.Json.JsonReaderException
+
+				json = "{\"hello\":\"";
+				jsonObject = JObject.Parse(json);
+
+				json = "{\"Message\": {\"Code\": \"500\", \"Description\": \"Invalid Username or Password\"},\"Payload\": { \"ClaimID\": 0, \"Username\": \"duskd2c.viare.ws@consortiumclemenger.com.au\", \"Password\": \"***REDACTED***\", \"AuthenticationToken\": \"00000000-0000-0000-0000-000000000000\", \"AccountID\": 34468, \"CampaignClaim\": null}}";
+
+				 jsonObject = JObject.Parse(json);
+
+
+				string code = jsonObject?["Message"]?["Code"]?.Value<string>();
+				string what = jsonObject?["Message"]?["what"]?.Value<string>();
+				string ooh = jsonObject?["ooh"]?["what"]?.Value<string>();
+
+			} catch (Exception ex) {
+				Console.WriteLine($"Shits fucked: {ex}");
+			}
 
 		}
 

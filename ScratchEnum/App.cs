@@ -17,7 +17,7 @@ namespace ScratchEnum {
 			Sex s = (Sex)1;
 			Sex sM = (Sex)Enum.Parse(typeof(Sex), "M");
 			Sex sF = (Sex)Enum.Parse(typeof(Sex), "F");
-			//This does nto work because the case is invalid
+			//This does not work because the case is invalid
 			//Sex s3 = (Sex)Enum.Parse(typeof(Sex), "m");
 
 			int iF = ((int)sF);
