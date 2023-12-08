@@ -57,7 +57,7 @@ namespace ScratchString {
 
 			//TestReplace();
 
-			//TestSubstringAndIndexOf();
+			TestSubstringAndIndexOf();
 
 			//TestNulls();
 
@@ -434,7 +434,13 @@ namespace ScratchString {
 		public void TestSubstringAndIndexOf() {
 			string test = "SBA40N203515   ;10;000;6805   ";
 
-			Console.WriteLine("Substring 0 to text len + 1 {0}", test.Substring(0, test.Length + 1));
+			// These should fail.
+			try {
+				Console.WriteLine("Substring 0 to text len + 1 {0}", test.Substring(0, test.Length + 1));
+				Console.WriteLine("Substring 0 to text len + 100 {0}", test.Substring(0, test.Length + 100));
+			} catch (ArgumentOutOfRangeException e) {
+				Console.WriteLine(e.ToString());
+			}
 			Console.WriteLine("Substring 0 indexof first ; {0}", test.Substring(0, test.IndexOf(';')));
 			Console.WriteLine("Substring from first ; (add one to skip the ;) {0}", test.Substring(test.IndexOf(';') + 1));
 
