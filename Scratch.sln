@@ -105,6 +105,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchGraphics", "ScratchG
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchPermutations", "ScratchPermutations\ScratchPermutations.csproj", "{0C455855-69DE-4072-985F-F6CC6235AFC3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchNLog", "ScratchNLog\ScratchNLog.csproj", "{87CCC981-63DF-4B0B-AD08-2ECF068FC74F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -315,6 +317,10 @@ Global
 		{0C455855-69DE-4072-985F-F6CC6235AFC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C455855-69DE-4072-985F-F6CC6235AFC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C455855-69DE-4072-985F-F6CC6235AFC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87CCC981-63DF-4B0B-AD08-2ECF068FC74F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87CCC981-63DF-4B0B-AD08-2ECF068FC74F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87CCC981-63DF-4B0B-AD08-2ECF068FC74F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87CCC981-63DF-4B0B-AD08-2ECF068FC74F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
