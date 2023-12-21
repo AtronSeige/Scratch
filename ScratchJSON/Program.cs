@@ -11,8 +11,23 @@ namespace ScratchJSON {
 			//XmlToJson();
 			//QueryJson();
 			//CreateJson();
-			JObjectExcception();
+			//JObjectExcception();
+			DeserializeXmlNode(null);
+			DeserializeXmlNode(string.Empty);
+			DeserializeXmlNode("{}");
+			DeserializeXmlNode("<html/>");
+			//DeserializeXmlNode();
+			//DeserializeXmlNode();
 			Console.ReadLine();
+		}
+
+		private static void DeserializeXmlNode(string responseBody) {
+			try {
+				XmlDocument doc = JsonConvert.DeserializeXmlNode(responseBody ?? string.Empty, "ProntoAvenueResponse");
+			}catch (Exception ex) {
+				Console.WriteLine(ex);
+			}
+
 		}
 
 		static void XmlToJson() {
