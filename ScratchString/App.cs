@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.Encodings.Web;
+using System.Text.RegularExpressions;
 using System.Web;
 
 namespace ScratchString {
@@ -57,7 +58,7 @@ namespace ScratchString {
 
 			//TestReplace();
 
-			TestSubstringAndIndexOf();
+			//TestSubstringAndIndexOf();
 
 			//TestNulls();
 
@@ -83,7 +84,14 @@ namespace ScratchString {
 			//Console.WriteLine(ToTitleCase("m"));
 			//Console.WriteLine(ToTitleCase("M"));
 
-			TestHTMLSafe();
+			//TestHTMLSafe();
+
+			TestReplaceWithAsterisk();
+		}
+
+		private void TestReplaceWithAsterisk() {
+			string pwd = "Password";
+			Console.WriteLine(Regex.Replace(pwd, ".", "*"));
 		}
 
 		private void NullCastTest() {

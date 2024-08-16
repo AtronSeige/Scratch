@@ -22,7 +22,7 @@ namespace ScratchRegex {
 			//Console.WriteLine(RemoveAllNonAlphaNumeric("There1Should2Be3No4Numbers"));
 			//Console.WriteLine(RemoveAllNonAlphaNumeric("Special|Chars$Should+Not!Show"));
 
-			Console.ReadLine();
+			//Console.ReadLine();
 		}
 
 
@@ -67,16 +67,53 @@ namespace ScratchRegex {
 			//StringTest("this is a DONOTCOMMIT test of the warning system", "(DO_NOT_COMMIT|JACO|DONOTCOMMIT)", true, RegexOptions.IgnoreCase);
 			//StringTest("this is a DO NOT COMMIT test of the warning system", "(DO_NOT_COMMIT|JACO|DONOTCOMMIT)", false, RegexOptions.IgnoreCase);
 
-			string jacoPattern = "(DO_NOT_COMMIT|JACO|DONOTCOMMIT)";
-			StringTest("JACO", jacoPattern, true, RegexOptions.IgnoreCase);
-			StringTest("Developer: JACO H.", jacoPattern, false, RegexOptions.IgnoreCase);
-			StringTest("TODO JACO Help with this", jacoPattern, true, RegexOptions.IgnoreCase);
+			//string jacoPattern = "(DO_NOT_COMMIT|JACO|DONOTCOMMIT)";
+			//StringTest("JACO", jacoPattern, true, RegexOptions.IgnoreCase);
+			//StringTest("Developer: JACO H.", jacoPattern, false, RegexOptions.IgnoreCase);
+			//StringTest("TODO JACO Help with this", jacoPattern, true, RegexOptions.IgnoreCase);
 
-			string ignoreJacoPattern = "(jaco h.)";
+			//string ignoreJacoPattern = "(jaco h.)";
 
-			StringTest("JACO", ignoreJacoPattern, false, RegexOptions.IgnoreCase);
-			StringTest("Developer: JACO H.", ignoreJacoPattern, true, RegexOptions.IgnoreCase);
-			StringTest("TODO JACO Help with this", ignoreJacoPattern, false, RegexOptions.IgnoreCase);
+			//StringTest("JACO", ignoreJacoPattern, false, RegexOptions.IgnoreCase);
+			//StringTest("Developer: JACO H.", ignoreJacoPattern, true, RegexOptions.IgnoreCase);
+			//StringTest("TODO JACO Help with this", ignoreJacoPattern, false, RegexOptions.IgnoreCase);
+
+			//StringTest("StartTestValues", "Start", true, RegexOptions.IgnoreCase);
+			//StringTest("StartTestValues", "^Snap", false, RegexOptions.IgnoreCase);
+			//StringTest("StartTestValues", "^Values", false, RegexOptions.IgnoreCase);
+
+			//StringTest("MidTestValues", "(Test)", true, RegexOptions.IgnoreCase);
+			//StringTest("MidTestValues", "bloc", false, RegexOptions.IgnoreCase);
+			//StringTest("MidTestValues", "(Te)*(Va)", true, RegexOptions.IgnoreCase);
+			//StringTest("MidTestValues", "eT*Va", false, RegexOptions.IgnoreCase);
+			//StringTest("MidTestValues", "(Mi)*(Te)*(Va)", true, RegexOptions.IgnoreCase);
+			//StringTest("MidTestValues", "^Mi*(Te)*(Va)", true, RegexOptions.IgnoreCase);
+
+			//StringTest("Angry.v666.Bot/MUHAHAHAHAHA/ALLYOURBASE", "(Angry)*(Bot)*", true, RegexOptions.IgnoreCase);
+			//StringTest("Angry.v666.Bot/MUHAHAHAHAHA/ALLYOURBASE", "^Angry*(Bot)*", true, RegexOptions.IgnoreCase);
+			//StringTest("BadAngry.v666.Bot/MUHAHAHAHAHA/ALLYOURBASE", "^Angry*(Bot)*", false, RegexOptions.IgnoreCase);
+			//StringTest("BadAngry.v666.Bot/MUHAHAHAHAHA/ALLYOURBASE", "^Angry*", false, RegexOptions.IgnoreCase);
+
+			//StringTest("123abc456def789ghi", "def", true, RegexOptions.IgnoreCase);
+			//StringTest("123abc456def789ghi", "bcd|234|567", false, RegexOptions.IgnoreCase);
+			//StringTest("123abc456def789ghi", "bcd|234|789", true, RegexOptions.IgnoreCase);
+			//StringTest("123abc456def789ghi", "bcd|6d|0", true, RegexOptions.IgnoreCase);
+
+			//StringTest("123abc456d", "", true, RegexOptions.IgnoreCase);
+			
+			StringTest("Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleBot/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057",
+				"^.*Amazonbot.*$|^.*Applebot.*$|^.*AppleNewsBot.*$", true, RegexOptions .IgnoreCase);
+
+			StringTest("Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleBot/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057",
+				"^.*Amazonbot.*$|^.*Applebot.*$|^Mozilla.*Bot.*$|^.*AppleNewsBot.*$", true, RegexOptions.IgnoreCase);
+
+			StringTest("Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleBt/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057",
+				"^.*Amazonbot.*$|^.*Applebot.*$|^Mozilla.*Bot.*$|^.*AppleNewsBot.*$", false, RegexOptions.IgnoreCase);
+
+			StringTest("Mozilla/5.0 (Linux; Android 8.1.0; Pixel Build/OPM4.171019.021.D1) AppleBot/537.36 (KHTML, like Gecko) Chrome/65.0.3325.109 Mobile Safari/537.36 EdgA/42.0.0.2057",
+				"", true, RegexOptions.IgnoreCase);
+
+
 		}
 
 		private static void StringTest(string toTest, string pattern, bool expectPass, RegexOptions options = RegexOptions.None) {

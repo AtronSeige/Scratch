@@ -229,5 +229,25 @@ namespace ScratchDateTime {
 
 			Console.WriteLine($"A second has passed!");
 		}
+
+		private void TestTicks() {
+			// Convert ticks to a hex value
+			long ticks = DateTime.Now.Ticks;
+			Console.WriteLine(new DateTime(ticks).ToString());
+
+			string dtStr = ticks.ToString();
+			Console.WriteLine(dtStr);
+			string dtHex = ticks.ToString("x");
+			Console.WriteLine(dtHex);
+
+			// Convert hex to long
+			long lHex = Convert.ToInt64(dtHex,16);
+			Console.WriteLine(new DateTime(lHex).ToString());
+
+			Console.WriteLine(new DateTime(Convert.ToInt64("8dc9a6f6a7592e4", 16)).ToString());
+			Console.WriteLine(new DateTime(Convert.ToInt64("8dca79775696286", 16)).ToString());
+
+
+		}
 	}
 }

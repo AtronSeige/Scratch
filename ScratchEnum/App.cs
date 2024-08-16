@@ -10,6 +10,7 @@ namespace ScratchEnum {
 
 		public void Run() {
 			Console.WriteLine(Gender.Female);
+			Console.WriteLine(Gender.Female.ToString());
 			Console.WriteLine((int)Gender.Male);
 
 			Gender g = (Gender)2;
@@ -57,6 +58,12 @@ namespace ScratchEnum {
 			Enum.TryParse("one", out b);
 			Console.WriteLine(b.ToString());
 
+			Enum.TryParse("jaco", out b);
+			Console.WriteLine(b.ToString());
+
+			b = bubbles.two;
+			Enum.TryParse("jaco", out b);
+			Console.WriteLine(b.ToString());
 		}
 
 
@@ -87,6 +94,7 @@ namespace ScratchEnum {
 		}
 
 		enum bubbles {
+			zero = 0,
 			one = 1,
 			two = 2,
 			three
