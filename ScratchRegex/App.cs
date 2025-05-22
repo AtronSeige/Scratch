@@ -11,7 +11,11 @@ namespace ScratchRegex {
 		}
 
 		public void Run() {
-			StringTests();
+			TestNumberMatch();
+
+
+
+			//StringTests();
 
 			//ReplaceTests();
 
@@ -25,6 +29,26 @@ namespace ScratchRegex {
 			//Console.ReadLine();
 		}
 
+		private static void TestNumberMatch() {
+			//the 2 patterns do the same thing
+			string pattern = "^[0-9]*$";
+
+			Console.WriteLine(Regex.IsMatch("123123", pattern));
+			Console.WriteLine(Regex.IsMatch("123asd123", pattern));
+			Console.WriteLine(Regex.IsMatch("asd123asd", pattern));
+			Console.WriteLine(Regex.IsMatch("asd", pattern));
+
+			pattern = @"^\d{1,10}$";
+
+			Console.WriteLine(Regex.IsMatch("", pattern));
+			Console.WriteLine(Regex.IsMatch("1", pattern));
+			Console.WriteLine(Regex.IsMatch("123123", pattern));
+			Console.WriteLine(Regex.IsMatch(int.MaxValue.ToString(), pattern));
+			Console.WriteLine(Regex.IsMatch("123456789123", pattern));
+			Console.WriteLine(Regex.IsMatch("123asd123", pattern));
+			Console.WriteLine(Regex.IsMatch("asd123asd", pattern));
+			Console.WriteLine(Regex.IsMatch("asd", pattern));
+		}
 
 		private void ReplaceTests() {
 			string test = "this1is2a3test";
@@ -188,6 +212,8 @@ namespace ScratchRegex {
 		public string RemoveAllNonAlphas(string input) {
 			return Regex.Replace(input, @"\W", "");
 		}
+
+		
 
 	}
 }

@@ -14,7 +14,7 @@ namespace ScratchNull {
 			//AreNullsEqual(s, i, d, o, dt);
 			//HaveType(s, i, d, o, dt);
 
-			ShorthandTest();
+			//ShorthandTest();
 
 			NullConditional();
 
@@ -230,6 +230,13 @@ namespace ScratchNull {
 				Console.WriteLine("Foo ID exists and greater than zero");
 			} else {
 				Console.WriteLine("Foo ID does not exist or less than or equal to zero");
+			}
+			Console.WriteLine($"Foo ID is {foo?.ID}");
+
+			if (foo?.ID == 0) {
+				Console.WriteLine("Foo ID exists and is zero");
+			} else {
+				Console.WriteLine("Foo ID does not exist or is not zero");
 			}
 			Console.WriteLine($"Foo ID is {foo?.ID}");
 

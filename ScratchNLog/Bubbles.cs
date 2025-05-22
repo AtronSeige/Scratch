@@ -12,11 +12,16 @@ namespace ScratchNLog {
 		public DateTime Duration { get; set; }
 		public decimal Radius { get; set; }
 
+		public string SecretOne { get; set; }
+		public string SecretTwo { get; set; }
+		public string SecretThree { get; set; }
+
 		private Logger logger = LogManager.GetCurrentClassLogger();
 
 		public Bubbles() {
 			logger.Info("Bubbles Constructed");
-			logger.Info(this);
+			// THE @ sign tells NLog to deconstruct the object to properties.
+			logger.Info("new {@bubbles}", this);
 		}
 	}
 }

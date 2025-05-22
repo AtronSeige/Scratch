@@ -84,9 +84,9 @@ namespace ScratchString {
 			//Console.WriteLine(ToTitleCase("m"));
 			//Console.WriteLine(ToTitleCase("M"));
 
-			//TestHTMLSafe();
+			TestHTMLSafe();
 
-			TestReplaceWithAsterisk();
+			//TestReplaceWithAsterisk();
 		}
 
 		private void TestReplaceWithAsterisk() {
@@ -553,6 +553,11 @@ namespace ScratchString {
 
 			Console.WriteLine(html);
 			Console.WriteLine(HttpUtility.HtmlEncode(html));
+
+			string xml = "w&tVB;P![3c";
+			Console.WriteLine(xml);
+			Console.WriteLine(HttpUtility.HtmlEncode(xml));
+
 		}
 	}
 }

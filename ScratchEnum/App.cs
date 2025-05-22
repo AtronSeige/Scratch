@@ -14,7 +14,7 @@ namespace ScratchEnum {
 			Console.WriteLine((int)Gender.Male);
 
 			Gender g = (Gender)2;
-
+			Console.WriteLine(g);
 			Sex s = (Sex)1;
 			Sex sM = (Sex)Enum.Parse(typeof(Sex), "M");
 			Sex sF = (Sex)Enum.Parse(typeof(Sex), "F");
