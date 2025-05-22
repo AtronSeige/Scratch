@@ -2,21 +2,24 @@
 using System;
 
 // https://github.com/NLog/NLog/wiki/Tutorial
+// https://github.com/NLog/NLog/wiki/How-to-use-structured-logging#transform-captured-properties
 
 namespace ScratchNLog {
 	internal class Program {
 		private static ILogger logger;
 
-
 		static void Main(string[] args) {
 
+			//Note: The null checks are needed because Bubbles logs itself in the constructor.
+			// If the values had not been null, then the extra checks are not required.
+			// This has to be registered before LogManager.GetCurrentClassLogger() is called. 
 			LogManager.Setup().SetupSerialization(s =>
 				s.RegisterObjectTransformation<Bubbles>(b =>
 					new {
-						ID = b.ID,
+						b.ID,
 						Name = b.Name?? "null",
-						Duration = b.Duration,
-						Radius = b.Radius,
+						b.Duration,
+						b.Radius,
 						//bubbles.SecretOne, // do not serialize
 						SecretTwo = b.SecretTwo != null ? b.SecretTwo.Substring(0, 5) : "null", // Mask
 						SecretThree = "88888888888" // Replace
@@ -48,10 +51,7 @@ namespace ScratchNLog {
 				logger.Error(e);
 			}
 
-			
-
 			logger.Info("post transformation {@bubbles}", bubbles);
-
 
 			Console.WriteLine("Done");
 			Console.ReadLine();
