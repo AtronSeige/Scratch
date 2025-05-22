@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Xml;
@@ -20,7 +21,13 @@ namespace ScratchJSON {
 			//DeserializeXmlNode("<html/>");
 			//DeserializeXmlNode();
 			//DeserializeXmlNode();
-			RawToObject();
+			//RawToObject();
+
+			CreateJsonFile();
+			ReadJsonFile();
+			SerializeObjectToJson();
+			DeserializeJsonToTestClass();
+
 			Console.ReadLine();
 		}
 
@@ -123,6 +130,57 @@ namespace ScratchJSON {
 				Console.WriteLine($"Shits fucked: {ex}");
 			}
 
+		}
+
+		static void CreateJsonFile() {
+			// Create a new json file in the Resources folder.
+			if (!Directory.Exists("Resources")) {
+				Directory.CreateDirectory("Resources");
+			}
+			string json = "{\"hello\":\"world\"}";
+			File.WriteAllText("Resources\\test.json", json);
+		}
+
+		static void ReadJsonFile() {
+			// Read a json file from the Resources folder.
+			string json = File.ReadAllText("Resources\\test.json");
+			Console.WriteLine(json);
+		}
+
+		static void DeserializeJsonToTestClass() {
+			// Deserialize the json file to a TestClass object.
+			string json = File.ReadAllText("Resources\\test.json");
+			TestClass tc = JsonConvert.DeserializeObject<TestClass>(json);
+			Console.WriteLine(tc.Name);
+			Console.WriteLine(tc.TC2.First().Value);
+		}
+
+		static void SerializeObjectToJson() {
+
+			if (!Directory.Exists("Resources")) {
+				Directory.CreateDirectory("Resources");
+			}
+
+			if (File.Exists("Resources\\test.json")) {
+				File.Delete("Resources\\test.json");
+			}
+
+			TestClass tc = new() {
+				ID = 1,
+				Name = "Jaco"
+			};
+			TestClass2 tc2_ZA = new() {
+				ID = 1,
+				Value = "ZA"
+			};
+			TestClass2 tc2_NZ = new (){
+				ID = 1,
+				Value = "NZ"
+			};
+			tc.TC2 = [tc2_ZA, tc2_NZ];
+
+			string json = JsonConvert.SerializeObject(tc);
+			File.WriteAllText("Resources\\test.json", json);
 		}
 
 		public class TestClass {

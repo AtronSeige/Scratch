@@ -1,0 +1,12 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+@baconserver = https://baconipsum.com/api
+@type = meat-and-filler
+@paras = 3
+@startwithlorem = 1
+@format = html
+
+GET {{baconserver}}/?type={{type}}
+###
+
+GET {{baconserver}}/?type={{type}}&paras={{paras}}&start-with-lorem={{startwithlorem}}&format={{format}}
+###
