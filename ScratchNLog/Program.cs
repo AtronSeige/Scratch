@@ -13,19 +13,19 @@ namespace ScratchNLog {
 			//Note: The null checks are needed because Bubbles logs itself in the constructor.
 			// If the values had not been null, then the extra checks are not required.
 			// This has to be registered before LogManager.GetCurrentClassLogger() is called. 
-			LogManager.Setup().SetupSerialization(s =>
-				s.RegisterObjectTransformation<Bubbles>(b =>
-					new {
-						b.ID,
-						Name = b.Name?? "null",
-						b.Duration,
-						b.Radius,
-						//bubbles.SecretOne, // do not serialize
-						SecretTwo = b.SecretTwo != null ? b.SecretTwo.Substring(0, 5) : "null", // Mask
-						SecretThree = "88888888888" // Replace
-					}
-				)
-			);
+			//LogManager.Setup().SetupSerialization(s =>
+			//	s.RegisterObjectTransformation<Bubbles>(b =>
+			//		new {
+			//			b.ID,
+			//			Name = b.Name?? "null",
+			//			b.Duration,
+			//			b.Radius,
+			//			//bubbles.SecretOne, // do not serialize
+			//			SecretTwo = b.SecretTwo != null ? b.SecretTwo.Substring(0, 5) : "null", // Mask
+			//			SecretThree = "88888888888", // Replace
+			//		}
+			//	)
+			//);
 
 			logger = LogManager.GetCurrentClassLogger();
 
@@ -41,6 +41,12 @@ namespace ScratchNLog {
 			bubbles.SecretThree = "abcdefgh";
 
 			logger.Info("Info {@bubbles}", bubbles);
+
+			ITestLogTransform one = new LogTransformOne() { ID = 1, Name = "One", Email = "one@one.com", Token = "THIS IS A SECURE TOKEN", TokenExpiry = DateTime.Now };
+			logger.Info("One {@one}", one);
+
+			ITestLogTransform two = new LogTransformTwo() { ID = 2, Name = "Two", Email = "two@two.com", Password = "Password01", Secret= "Ninja" };
+			logger.Info("Two {@two}", two);
 
 			try {
 				// Logging exceptions!

@@ -49,6 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bubbles.cs" />
+    <Compile Include="ITestLogTransform.cs" />
+    <Compile Include="LogTransformOne.cs" />
+    <Compile Include="LogTransformTwo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
