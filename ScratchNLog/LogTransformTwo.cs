@@ -1,12 +1,7 @@
 ﻿using NLog;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ScratchNLog {
-	internal class LogTransformTwo :ITestLogTransform {
+	internal class LogTransformTwo : ITestLogTransform {
 		public int ID { get; set; }
 		public string Name { get; set; }
 		public string Email { get; set; }
@@ -14,15 +9,12 @@ namespace ScratchNLog {
 		public string Password { get; set; }
 		public string Secret { get; set; }
 
-		public LogTransformTwo() {
-			LogManager.Setup().SetupSerialization(s =>
-				s.RegisterObjectTransformation<LogTransformTwo>(two =>
-					new {
-						Password_LAST4 = two.Password != null ? two.Password.Substring(0, 4) : "null", // Mask With new Name,
-						Secret_NULLED = (string) null // Nulled with new Name
-					}
-				)
-			);
+		public object GetNLogTransformationObject() {
+			return new {
+				this.Name,
+				Password_First4 = this.Password != null ? this.Password.Substring(0, 4) : "null", // Masked With new Name,
+				Secret_NULLED = (string)null // Nulled with new Name
+			};
 		}
 	}
 }

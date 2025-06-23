@@ -44,16 +44,17 @@ namespace ScratchNLog {
 						//bubbles.SecretOne, // do not serialize
 						SecretTwo = b.SecretTwo != null ? b.SecretTwo.Substring(0, 5) : "null", // Mask
 						SecretThree = "88888888888", // Replace
+						b.Hidden
 					}
 				)
 			);
 
 			this.Hidden.TopSecret = "TopSecretHiddenData";
 
-			// THE @ sign tells NLog to deconstruct the object to properties.
-			logger.Info("new {@bubbles}", this);
+			//// THE @ sign tells NLog to deconstruct the object to properties.
+			//logger.Info("new {@bubbles}", this);
 
-			logger.Info("hidden {@hidden}", this.Hidden);
+			//logger.Info("hidden {@hidden}", this.Hidden);
 		}
 	}
 }

@@ -1,12 +1,13 @@
 ﻿using NLog;
 using System;
+using System.Collections.Generic;
 
 // https://github.com/NLog/NLog/wiki/Tutorial
 // https://github.com/NLog/NLog/wiki/How-to-use-structured-logging#transform-captured-properties
 
 namespace ScratchNLog {
 	internal class Program {
-		private static ILogger logger;
+		private static Logger logger;
 
 		static void Main(string[] args) {
 
@@ -27,6 +28,8 @@ namespace ScratchNLog {
 			//	)
 			//);
 
+			RegisterInterfactLogTransformations();
+
 			logger = LogManager.GetCurrentClassLogger();
 
 			logger.Info("ScratchMLog has started.");
@@ -41,11 +44,13 @@ namespace ScratchNLog {
 			bubbles.SecretThree = "abcdefgh";
 
 			logger.Info("Info {@bubbles}", bubbles);
+			logger.WithProperty("bubbles", bubbles).Info("BUBBLES!!!");
 
 			ITestLogTransform one = new LogTransformOne() { ID = 1, Name = "One", Email = "one@one.com", Token = "THIS IS A SECURE TOKEN", TokenExpiry = DateTime.Now };
 			logger.Info("One {@one}", one);
+			logger.WithProperty("one", one).Info("ONE", one);
 
-			ITestLogTransform two = new LogTransformTwo() { ID = 2, Name = "Two", Email = "two@two.com", Password = "Password01", Secret= "Ninja" };
+			ITestLogTransform two = new LogTransformTwo() { ID = 2, Name = "Two", Email = "two@two.com", Password = "Password01", Secret = "Ninja" };
 			logger.Info("Two {@two}", two);
 
 			try {
@@ -59,8 +64,53 @@ namespace ScratchNLog {
 
 			logger.Info("post transformation {@bubbles}", bubbles);
 
+			logger.Info("sentence {@object}", new { bubbles.ID, bubbles.Name });
+
+			logger.WithProperty("ID", bubbles.ID)
+				.WithProperty("Name", bubbles.Name)
+				.Info("test WithProperty");
+
+			logger.WithProperties(new Dictionary<string, object>() {
+				["ID"] = bubbles.ID,
+				["Name"] = bubbles.Name
+			})
+				.Info("test WithProperties1");
+
+			logger.WithProperties(new Dictionary<string, object>() { { "ID", bubbles.ID }, { "Name", bubbles.Name } })
+				.Info("test WithProperties2");
+
+			Dictionary<string, object> properties = new Dictionary<string, object>() {
+				{ "ID", bubbles.ID },
+				{ "Name", bubbles.Name }
+			};
+
+			logger.WithProperties(properties)
+				.Info("test WithProperties3");
+
+			string[] array = new string[] { "One", "Two", "Three" };
+			logger.Info("test WithArray {@array}", array);
+
+			//array = null;
+			////logger.Info("count null {count}", array.Length);
+
 			Console.WriteLine("Done");
 			Console.ReadLine();
+		}
+
+		/// <summary>
+		/// A method to add all class transformation to NLog for interfaces that require transformation.
+		/// </summary>
+		public static void RegisterInterfactLogTransformations() {
+			// Register a transformation for each interface, the reflection will find the specified method for each class that implements the interface and call it.
+			LogManager.Setup().SetupSerialization(s =>
+				s.RegisterObjectTransformation<ITestLogTransform>(o => {
+					var method = o.GetType().GetMethod("GetNLogTransformationObject", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic);
+					if (method != null) {
+						return method.Invoke(o, null);
+					}
+					return o;
+				})
+			);
 		}
 	}
 }

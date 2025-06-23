@@ -62,7 +62,7 @@ namespace ScratchString {
 
 			//TestNulls();
 
-			//TestPadding();
+			TestPadding();
 
 			//TestAddNullToString();
 
@@ -84,7 +84,7 @@ namespace ScratchString {
 			//Console.WriteLine(ToTitleCase("m"));
 			//Console.WriteLine(ToTitleCase("M"));
 
-			TestHTMLSafe();
+			//TestHTMLSafe();
 
 			//TestReplaceWithAsterisk();
 		}
@@ -242,6 +242,49 @@ namespace ScratchString {
 			Console.WriteLine("1001".PadLeft(3, '0'));
 			Console.WriteLine("9999".PadLeft(3, '0'));
 			Console.WriteLine("888888".PadLeft(3, '0'));
+
+			string value = "123";
+
+			Console.WriteLine($"Something {value,10:format}");
+
+			int maskLength = GetMaskedLength(value);
+			Console.WriteLine($" {value}[{maskLength}] => {new string('*', maskLength)}{value.Substring(maskLength)}");
+
+			value = "1234";
+			maskLength = GetMaskedLength(value);
+			Console.WriteLine($" {value}[{maskLength}] => {new string('*', maskLength)}{value.Substring(maskLength)}");
+
+			value = "12345";
+			maskLength = GetMaskedLength(value);
+			Console.WriteLine($" {value}[{maskLength}] => {new string('*', maskLength)}{value.Substring(maskLength)}");
+
+			value = "123456";
+			maskLength = GetMaskedLength(value);
+			Console.WriteLine($" {value}[{maskLength}] => {new string('*', maskLength)}{value.Substring(maskLength)}");
+
+			value = "12341234123412349876";
+
+			// Only works on C#8+
+			Console.WriteLine($"Masked credit card : {value} => {new string('*', value.Length - 4)}{value[^4..]}");
+			// This works on previous versions
+			Console.WriteLine($"Masked credit card old : {value} => {new string('*', value.Length - 4)}{value.Substring(value.Length - 4)}");
+
+			Guid guid = Guid.NewGuid();
+			//Guid is 32 chars with 4 dashes, so 36 chars in total.
+			// Mask the first 28 chars, leaving the last 8 chars visible.
+			Console.WriteLine($"Masked guid : {guid} => {new string('*', 28)}{guid.ToString().Substring(28)}");
+		}
+
+		private int GetMaskedLength(string value) {
+			if (!string.IsNullOrWhiteSpace(value)) {
+				if (value.Length > 4) {
+					return value.Length - 4;
+				} else {
+					return value.Length;
+				}
+			} else {
+				return 0;
+			}
 		}
 
 		public string CamelCase(string input) {
