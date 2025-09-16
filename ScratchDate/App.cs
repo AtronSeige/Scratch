@@ -43,7 +43,9 @@ namespace ScratchDateTime {
 
 			//TestDifferentFormats();
 
-			TestDelay();
+			//TestDelay();
+
+			TestDateParse();
 		}
 
 		private void TestDifferenceInSeconds() {
@@ -248,6 +250,16 @@ namespace ScratchDateTime {
 			Console.WriteLine(new DateTime(Convert.ToInt64("8dca79775696286", 16)).ToString());
 
 
+		}
+
+		private void TestDateParse() {
+			var cultureInfo = System.Globalization.CultureInfo.InvariantCulture;
+			const string dateFormat = "dd/MM/yyyy h:mm:ss tt";
+
+			string testValue = "02/05/2020 11:00:00 PM";
+
+			DateTime parsedDate = DateTime.ParseExact(testValue, dateFormat, cultureInfo);
+			Console.WriteLine(parsedDate);
 		}
 	}
 }

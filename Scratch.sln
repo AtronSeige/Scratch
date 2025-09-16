@@ -107,6 +107,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchPermutations", "Scra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchNLog", "ScratchNLog\ScratchNLog.csproj", "{87CCC981-63DF-4B0B-AD08-2ECF068FC74F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchExtensions", "ScratchExtensions\ScratchExtensions.csproj", "{C39B75C1-FDE0-40DA-AABC-651765855A64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchConvertWebpToPng", "ScratchConvertWebpToPng\ScratchConvertWebpToPng.csproj", "{6329BC9C-9629-41F2-978B-5D5DC67984BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -321,6 +325,14 @@ Global
 		{87CCC981-63DF-4B0B-AD08-2ECF068FC74F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87CCC981-63DF-4B0B-AD08-2ECF068FC74F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87CCC981-63DF-4B0B-AD08-2ECF068FC74F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C39B75C1-FDE0-40DA-AABC-651765855A64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C39B75C1-FDE0-40DA-AABC-651765855A64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C39B75C1-FDE0-40DA-AABC-651765855A64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C39B75C1-FDE0-40DA-AABC-651765855A64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6329BC9C-9629-41F2-978B-5D5DC67984BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6329BC9C-9629-41F2-978B-5D5DC67984BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6329BC9C-9629-41F2-978B-5D5DC67984BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6329BC9C-9629-41F2-978B-5D5DC67984BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

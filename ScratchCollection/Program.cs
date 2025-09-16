@@ -6,8 +6,35 @@ namespace ScratchCollection
 {
 	class Program
 	{
-		static void Main(string[] args)
-		{
+		static void Main(string[] args) {
+
+			TestSortedList();
+			
+			//Test_roll_OwnList();
+
+			Console.ReadLine();
+		}
+
+		private static void TestSortedList() {
+			SortedList<string, string> sortedList = new SortedList<string, string>();
+
+			sortedList.Add("one", "1");
+			sortedList.Add("one", "one");
+			sortedList.Add("one", "uno");
+			sortedList.Add("two", "2");
+			sortedList.Add("two", "two");
+			sortedList.Add("two", "duex");
+
+			if (sortedList.ContainsKey("one")) {
+				Console.WriteLine("Contains key 'one'");
+				Console.WriteLine($"The value of \"one\" is {sortedList["one"]}");
+			}
+
+
+
+		}
+
+		private static void Test_roll_OwnList() {
 			test t = new test();
 			t.Name = "Test_1";
 			t.lst.Add("one");
@@ -55,8 +82,6 @@ namespace ScratchCollection
 			//foreach (string s in strings) {
 			//	Console.WriteLine("what");
 			//}
-
-			Console.ReadLine();
 		}
 	}
 

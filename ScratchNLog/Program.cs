@@ -10,6 +10,17 @@ namespace ScratchNLog {
 		private static Logger logger;
 
 		static void Main(string[] args) {
+			// This is the main entry point for the application.
+			// It will run the Run method which contains the main logic.
+			//Run();
+			// Uncomment to see a small example of logging with properties.
+			SmallExample();
+
+			Console.WriteLine("Done");
+			Console.ReadLine();
+		}
+
+		public static void Run() {
 
 			//Note: The null checks are needed because Bubbles logs itself in the constructor.
 			// If the values had not been null, then the extra checks are not required.
@@ -32,7 +43,7 @@ namespace ScratchNLog {
 
 			logger = LogManager.GetCurrentClassLogger();
 
-			logger.Info("ScratchMLog has started.");
+			logger.Info("ScratchNLog has started.");
 
 			Bubbles bubbles = new Bubbles();
 			bubbles.ID = 1;
@@ -93,8 +104,7 @@ namespace ScratchNLog {
 			//array = null;
 			////logger.Info("count null {count}", array.Length);
 
-			Console.WriteLine("Done");
-			Console.ReadLine();
+			
 		}
 
 		/// <summary>
@@ -111,6 +121,34 @@ namespace ScratchNLog {
 					return o;
 				})
 			);
+		}
+
+		public static void SmallExample() {
+
+			Logger logger = LogManager.GetCurrentClassLogger();
+
+			SmallObj s1 = new SmallObj();
+			s1.ID = 1;
+			s1.Name = "Bubbles";
+
+			SmallObj s2 = new SmallObj();
+			s2.ID = 2;
+			s2.Name = "Galore";
+
+			// The @ sign tells NLog to deconstruct the object to properties.
+			logger.Info("Full object in message {@s1}", s1);
+
+			logger.WithProperty("Small1", s1).Info("Full s1 object in event properties");
+			logger.WithProperty("Small1", s1).WithProperty("Small2", s2).Info("Full both object in event properties, added individually.");
+			logger.WithProperties(new Dictionary<string, object>() {
+				{ "Small1", s1 },
+				{ "Small2", s2 }
+			}).Info("Full both object in event properties, added as a dictionary.");
+		}
+
+		internal class SmallObj {
+			public int ID { get; set; }
+			public string Name { get; set; }
 		}
 	}
 }
