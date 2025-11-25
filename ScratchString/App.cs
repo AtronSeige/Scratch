@@ -62,7 +62,7 @@ namespace ScratchString {
 
 			//TestNulls();
 
-			TestPadding();
+			//TestPadding();
 
 			//TestAddNullToString();
 
@@ -87,6 +87,8 @@ namespace ScratchString {
 			//TestHTMLSafe();
 
 			//TestReplaceWithAsterisk();
+
+			TestInterpolation();
 		}
 
 		private void TestReplaceWithAsterisk() {
@@ -576,13 +578,13 @@ namespace ScratchString {
 
 		private (string first, string last) SplitNameSurnameBySpace(string fullname) {
 
-			if (string.IsNullOrWhiteSpace(fullname)) return ("","");
+			if (string.IsNullOrWhiteSpace(fullname)) return ("", "");
 
 			if (fullname.Contains(" ")) {
 				int space = fullname.LastIndexOf(" ");
-				string lastname = fullname.Substring(space+ 1);
+				string lastname = fullname.Substring(space + 1);
 				string firstname = fullname.Substring(0, space);
-				
+
 				return (firstname, lastname);
 			} else {
 				return (fullname, "");
@@ -601,6 +603,20 @@ namespace ScratchString {
 			Console.WriteLine(xml);
 			Console.WriteLine(HttpUtility.HtmlEncode(xml));
 
+		}
+
+		private void TestInterpolation() {
+			string name = "Jaco";
+			int age = 40;
+			string s1 = String.Format("Name: {0}, Age: {1}", name, age);
+			string s2 = $"Name: {name}, Age: {age}";
+			Console.WriteLine(s1);
+			Console.WriteLine(s2);
+
+			string s3 = "string format Name: {0}";
+			Console.WriteLine(string.Format(s3, name));
+			s3 = "interpolate Name: {0}";
+			Console.WriteLine($"{s3}", name);
 		}
 	}
 }
