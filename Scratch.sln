@@ -113,6 +113,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchConvertWebpToPng", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchFiddlerScript", "ScratchFiddlerScript\ScratchFiddlerScript.csproj", "{3970BCCB-FE1F-4A47-8D17-69ACC6D7B968}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScratchGuid", "ScratchGuid\ScratchGuid.csproj", "{3B0FFE5B-C9BA-45A6-B200-4DBA6D1BB458}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -339,6 +341,10 @@ Global
 		{3970BCCB-FE1F-4A47-8D17-69ACC6D7B968}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3970BCCB-FE1F-4A47-8D17-69ACC6D7B968}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3970BCCB-FE1F-4A47-8D17-69ACC6D7B968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B0FFE5B-C9BA-45A6-B200-4DBA6D1BB458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B0FFE5B-C9BA-45A6-B200-4DBA6D1BB458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B0FFE5B-C9BA-45A6-B200-4DBA6D1BB458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B0FFE5B-C9BA-45A6-B200-4DBA6D1BB458}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
